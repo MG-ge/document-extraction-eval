@@ -34,9 +34,9 @@ Everything below can be re-checked from this repository in a few minutes, with n
   [`evals/eval_split_v1.json`](evals/eval_split_v1.json) (fingerprint `2ed8fd9b1e0348df`).
 - **Runs:** one run per model on 18 Sep 2026, up to 16,384 output tokens. Gemini ran at
   temperature 0; the OpenAI requests set no temperature, although their run files say 0. Neither
-  set a reasoning level, so each ran at its API's default, medium; the last pass (below) sets medium explicitly. The two laptop
-  models ran greedy (temperature 0) with thinking off. Every model except NuExtract got the same
-  prompt:
+  set a reasoning level, so each ran at its API's default, medium; the last pass (below) sets
+  medium explicitly. The two laptop models ran greedy (temperature 0) with thinking off. Every
+  model except NuExtract got the same prompt:
 
   > **System:** You extract structured data from documents. You are given the text of one
   > document and a JSON schema. Reply with one JSON object that matches the schema and contains
@@ -208,7 +208,8 @@ Same 300 documents, same scorer, reasoning level medium throughout
 | `gpt-6-luna` | 0.9364 | 0.9580 | +0.0217 [+0.0094, +0.0336] | 0.9330 | 0.9547 |
 
 **For Sol and Gemini, one sentence is worth about five points**, as the error analysis
-predicted; `gpt-6-luna` gains about two. With it, `gpt-6.1-sol` scores 0.991 on the official score.
+predicted; `gpt-6-luna` gains about two. With it, `gpt-6.1-sol` scores 0.991 on the official
+score.
 
 **The same fix by code.** [`scripts/null_fill.py`](scripts/null_fill.py) takes each stored answer
 and adds, as `null`, every field its schema defines that the answer leaves out; a second variant
