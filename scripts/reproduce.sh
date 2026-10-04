@@ -18,6 +18,9 @@ echo
 echo "Calibration of the last-pass routes:"
 python3 scripts/calibrate.py
 echo
+echo "Null-fill by code:"
+python3 scripts/null_fill.py
+echo
 echo "Error analysis:"
 bun scripts/error_analysis.ts --check
 echo
