@@ -2,8 +2,8 @@
 
 `scripts/error_analysis.ts` sorts every counted error into a type by rule. Most of the large
 models' lost score is how an empty field is written; the rest are real values that are
-missing, extra or different. Each of those was read against the document's text (60
-documents, 105 document-model pairs), and the judgement is recorded below as one rule per
+missing, extra or different. Each of those was read against the document's text (50
+documents, 97 document-model pairs; the script prints both counts), and the judgement is recorded below as one rule per
 pattern: which document, which models, which fields, and whose error it is.
 
     model      the model is wrong: the document clearly supports the correct answer
@@ -27,7 +27,6 @@ REAL = {"not_json", "value_left_out", "value_added", "filled_empty", "emptied_va
 ALL = None
 PAY_IN = [94, 198, 235, 263, 378, 383, 409, 539, 540, 542, 587, 612, 620, 906, 951]
 GLOSSARY = [106, 312, 603, 740, 774, 806]
-PROXY = [127, 184, 187, 239, 261, 381, 471, 830]
 
 # (documents, models or ALL, field path regex, cause, pattern, what was read)
 RULES = [
@@ -47,10 +46,10 @@ RULES = [
      "'2 @ 17.99' is on the line below the item; the model left the unit price out."),
     ([59], ALL, r"^\.store_info\.name$", "either", "store name cut short",
      "The heading line ends with a registration number '(930311-W)'; the models drop it, gpt-5.6-luna also drops '(FC) S/3'."),
-    ([d for d in PROXY if d != 261], ALL, r"(company|transferAgent)City$", "either", "city includes the state",
-     "'ACWORTH, GEORGIA'; the schema has no state field for this address, so the models kept the state with the city."),
-    ([261], ALL, r"^\.companyCity$", "either", "city includes the state",
-     "'ACWORTH, GEORGIA'; the schema has no state field for this address, so the models kept the state with the city."),
+    ([127, 239, 261, 471], ALL, r"^\.companyCity$", "either", "city includes the state",
+     "'ACWORTH, GEORGIA'; these schemas have no companyState, so the models kept the state with the city."),
+    ([184, 187, 381, 471, 830], ALL, r"^\.transferAgentCity$", "either", "city includes the state",
+     "'BALLICO, CALIFORNIA'; these schemas have no transferAgentState, so the models kept the state with the city."),
     ([261], ["gpt-5.6-terra"], r"^\.transferAgentCity$", "model", "city includes the state",
      "The schema has transferAgentState, so the state does not belong in the city."),
     ([187], ["gpt-5.6-luna"], r"^\.companyState$", "model", "value missed",
@@ -68,7 +67,8 @@ RULES = [
     ([622], ["gpt-5.6-luna"], r"^\.mostRecentShipment\.", "model", "wrong row",
      "Asked for the most recent shipment, the model took the 1958 row instead of the 1988 one."),
     ([1], ALL, r"^\.productRevenue\.segments", "model", "list rows missed",
-     "The revenue segments of one business unit are left out of the list."),
+     "The chart names three segments and, in a table below, ten business units; the schema asks for a "
+     "'detailed product/segment breakdown'. The models listed the three segments and left out the ten units."),
     ([41], ALL, r"\.calories$", "model", "value missed",
      "Two calorie figures sit on a garbled line under the table ('A00 400 CAL 2750'); all three models left them out."),
     ([7], ["gpt-5.6-terra"], r"^\.first_name$", "either", "middle name",
@@ -82,7 +82,8 @@ RULES = [
     ([465], ["gemini-3.8-flash"], r"departure_time$", "either", "answer reformats the date",
      "The form reads '2/21/80 4:00 P.M.'; the correct answer rewrites it as '1980/02/21 04:00 PM', the model copies it."),
     ([569, 764, 773], ALL, r"prescriptionDrugs\.other", "either", "ticked boxes put in 'other'",
-     "Ticked drugs the schema has no field for; the 'Other:' line is blank. The models list them under 'other'."),
+     "Ticked drugs the schema has no field for. The 'Other:' line is blank, except in 773 where it names one drug, "
+     "which the correct answer keeps on its own. The models list the ticked drugs under 'other'."),
     ([607], ["gpt-5.6-luna"], r"passedInspection$", "model", "tick box misread",
      "'Inspection Result: ☑'; the model answered false."),
     ([764], ["gpt-5.6-terra"], r"^\.maritalStatus$", "model", "tick box misread",
@@ -102,6 +103,7 @@ def examples(model):
 
 failures = []
 fields = collections.Counter()  # (cause, pattern, model) -> fields
+pairs = set()  # (model, document) with a real-value error
 for m in MODELS:
     for e in examples(m):
         if e["type"] not in REAL:
@@ -111,12 +113,14 @@ for m in MODELS:
         if len(hits) != 1:
             failures.append(f"{m} doc {e['id']} {e['path']}: {len(hits)} rules match")
             continue
+        pairs.add((m, e["id"]))
         n = e.get("fields", 1)
         fields[(hits[0][3], hits[0][4], m)] += n
 
 if failures:
     sys.exit("\n".join(failures))
 
+print(f"Read by hand: {len({d for _, d in pairs})} documents, {len(pairs)} document-model pairs.")
 print("Fields lost to real-value errors, by whose error it is:")
 print(" | ".join(["cause", "pattern", *MODELS]))
 for cause in ("model", "answer", "either"):
