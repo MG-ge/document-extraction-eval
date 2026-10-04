@@ -12,7 +12,8 @@
  *   bun scripts/error_analysis.ts --examples M   print every labelled error of model M as JSON lines
  */
 import { readFileSync, writeFileSync } from 'node:fs';
-import { diff } from 'json-diff';
+// The scorer's own pinned copy (scorer/bun.lock), so this walks exactly the diff the scorer counts.
+import { diff } from '../scorer/node_modules/json-diff';
 
 const MODELS = [
   'gemini-3.8-flash',
@@ -42,10 +43,11 @@ type Counts = Record<Type, number>;
 
 const zero = (): Counts => Object.fromEntries(TYPES.map((t) => [t, 0])) as Counts;
 
+/** The scorer's convertStringsToUppercase: object values only, so strings directly inside a list keep their case. */
 const upper = (x: any): any => {
-  if (x === null || typeof x !== 'object') return typeof x === 'string' ? x.toUpperCase() : x;
+  if (x === null || typeof x !== 'object') return x;
   if (Array.isArray(x)) return x.map(upper);
-  return Object.fromEntries(Object.entries(x).map(([k, v]) => [k, upper(v)]));
+  return Object.fromEntries(Object.entries(x).map(([k, v]) => [k, typeof v === 'string' ? v.toUpperCase() : upper(v)]));
 };
 
 const BLANK = new Set(['', '0', 'N/A', 'NA', 'NONE', 'NULL', '-', '—']);
@@ -60,14 +62,19 @@ const isBlank = (v: any): boolean =>
 const unescape = (v: any) => String(v).replace(/\\([\\`*_{}\[\]()#+\-.!|<>~])/g, '$1');
 
 const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+/** A month name in full or abbreviated, and nothing longer: "MARKET" is not March. */
+const MONTH = '(JAN(?:UARY)?|FEB(?:RUARY)?|MAR(?:CH)?|APR(?:IL)?|MAY|JUNE?|JULY?|AUG(?:UST)?|SEP(?:T(?:EMBER)?)?|OCT(?:OBER)?|NOV(?:EMBER)?|DEC(?:EMBER)?)';
+const MONTH_DAY_YEAR = new RegExp(`^${MONTH}\\.?\\s+(\\d{1,2}),?\\s+(\\d{4})$`);
+const DAY_MONTH_YEAR = new RegExp(`^(\\d{1,2})\\s+${MONTH}\\.?,?\\s+(\\d{4})$`);
 
 /** "February 26, 2025" and "26 Feb 2025" as "2025-02-26"; anything else unchanged. */
 const isoDate = (s: string): string => {
-  const m =
-    s.match(/^([A-Z]{3})[A-Z]*\.?\s+(\d{1,2}),?\s+(\d{4})$/) ??
-    s.match(/^(\d{1,2})\s+([A-Z]{3})[A-Z]*\.?,?\s+(\d{4})$/)?.slice(0, 4).map((x, i, a) => (i === 1 ? a[2] : i === 2 ? a[1] : x));
-  const month = m ? MONTHS.indexOf(m[1]) + 1 : 0;
-  return month ? `${m![3]}-${String(month).padStart(2, '0')}-${m![2].padStart(2, '0')}` : s;
+  let m = s.match(MONTH_DAY_YEAR);
+  let month = '', day = '', year = '';
+  if (m) [, month, day, year] = m;
+  else if ((m = s.match(DAY_MONTH_YEAR))) [, day, month, year] = m;
+  else return s;
+  return `${year}-${String(MONTHS.indexOf(month.slice(0, 3)) + 1).padStart(2, '0')}-${day.padStart(2, '0')}`;
 };
 
 /** Same value written differently: case, spacing, punctuation, currency signs, number as text, date. */
@@ -269,7 +276,9 @@ const report = (check: boolean) => {
 // Output goes out in one write and the process ends on its own: process.exit() can cut off
 // output still queued for a pipe.
 const args = process.argv.slice(2);
-if (args[0] === '--examples') {
+if (!import.meta.main) {
+  // imported by the tests: run nothing
+} else if (args[0] === '--examples') {
   process.stdout.write(analyse(args[1]).examples.map((e) => JSON.stringify(e) + '\n').join(''));
 } else {
   report(args[0] === '--check');

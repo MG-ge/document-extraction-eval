@@ -4,6 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 (cd scorer && bun install --frozen-lockfile && bun test)
+bun test ./scripts
 
 echo
 python3 scripts/verify.py
