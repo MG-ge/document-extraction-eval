@@ -1,5 +1,7 @@
 # Document extraction: five models, one benchmark, and a scorer that rewards leaving things out
 
+[![reproduce](https://github.com/MG-ge/document-extraction-eval/actions/workflows/reproduce.yml/badge.svg)](https://github.com/MG-ge/document-extraction-eval/actions/workflows/reproduce.yml)
+
 **Every model here was given each document's correct text, not the document image.** So this
 measures one thing: how well a model turns a document's text into the structured fields a
 schema asks for. Reading a scan or a photo is a separate step, and it is not tested here.
@@ -146,14 +148,14 @@ cd document-extraction-eval
 
 That installs the scorer's one dependency, runs its tests, re-scores every stored answer and
 checks each one against the published files, then prints the results table, the scorer audit
-and the bootstrap intervals.
+and the bootstrap intervals. GitHub runs the same script on every change and weekly (the badge above).
 
 ## Files
 
 | Path | What it holds |
 |---|---|
 | `evals/eval_split_v1.json` | The frozen split: 300 test and 700 training IDs, hashes for the 300 |
-| `evals/predictions/<model>.jsonl` | Every raw answer, with the correct answer, tokens and seconds |
+| `evals/predictions/<model>.jsonl` | Every raw answer, with the correct answer, tokens and seconds; published only so the scores can be checked |
 | `evals/per_document/<model>.jsonl` | Every document's scores |
 | `evals/<model>.json` | Each model's summary, cost and breakdowns |
 | `scorer/` | The official scorer (unchanged), the counted score, both test suites |
