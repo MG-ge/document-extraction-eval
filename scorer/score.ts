@@ -85,7 +85,9 @@ for (const line of text.split('\n')) {
   );
 }
 
-for (const l of out) console.log(l);
+// One write: many console.log calls into a pipe can lose lines when the process exits (seen with
+// bun 1.4.2 on macOS).
+process.stdout.write(out.join('\n') + '\n');
 console.error(
   JSON.stringify({
     rows,
