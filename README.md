@@ -1,4 +1,4 @@
-# Document extraction: five models, one benchmark, and a scorer that rewards leaving things out
+# Document extraction: eight models, a scorer that rewards leaving things out, and one sentence worth five points
 
 [![reproduce](https://github.com/MG-ge/document-extraction-eval/actions/workflows/reproduce.yml/badge.svg)](https://github.com/MG-ge/document-extraction-eval/actions/workflows/reproduce.yml)
 
@@ -6,7 +6,7 @@
 measures one thing: how well a model turns a document's text into the structured fields a
 schema asks for. Reading a scan or a photo is a separate step, and it is not tested here.
 
-Three questions:
+Four questions:
 
 1. How accurate and how expensive are current models at pulling fields out of business
    documents such as invoices, bank statements, leases and tax forms?
@@ -16,6 +16,10 @@ Three questions:
 3. Where do the models lose their points? For the large models, mostly not on reading: about 80%
    of their lost score is how an empty field is written, and apart from one Gemini answer that
    is not valid JSON, each gets only about 40 of the 22,176 fields really wrong.
+4. Does saying how to write an empty field fix that? Mostly. One added sentence in the prompt
+   lifts `gpt-6.1-sol` from 0.941 to 0.991 and Gemini 3.8 Flash from 0.944 to 0.989. Filling the
+   gaps by code, from the schema alone, works as well, and better for `gpt-6-luna`, which ignored
+   the sentence on 2,156 fields.
 
 Everything below can be re-checked from this repository in a few minutes, with no API keys.
 
@@ -28,8 +32,11 @@ Everything below can be re-checked from this repository in a few minutes, with n
   document type, seeded shuffle, 31 document types, 22,176 fields to fill. The test and
   training IDs, and a SHA-256 hash of each test document's image, text, schema and answer, are in
   [`evals/eval_split_v1.json`](evals/eval_split_v1.json) (fingerprint `2ed8fd9b1e0348df`).
-- **Runs:** one run per model, temperature 0, thinking off, up to 16,384 output tokens, on
-  18 Sep 2026. Every model except NuExtract got the same prompt:
+- **Runs:** one run per model on 18 Sep 2026, up to 16,384 output tokens. Gemini ran at
+  temperature 0; the OpenAI requests set no temperature. Neither set a reasoning level, so each
+  ran at its API's default, medium; the last pass (below) sets medium explicitly. The two laptop
+  models ran greedy (temperature 0) with thinking off. Every model except NuExtract got the same
+  prompt:
 
   > **System:** You extract structured data from documents. You are given the text of one
   > document and a JSON schema. Reply with one JSON object that matches the schema and contains
@@ -143,7 +150,7 @@ field out (2,619 to 2,713 fields each) or write `0`, `""` or `{}` instead (365 t
 field they left out is optional in its schema, and the prompt never said how to write an empty
 field, so these answers are valid; the score counts them wrong only because the key is missing.
 Asking for every schema field, with `null` when the document has no value, should recover most
-of these points. That was not run, since it needs a new paid run of every model.
+of these points. The last pass below tests that.
 
 **The rest was read by hand.** Every real-value error of the three large models, 50 documents
 and 97 document-model pairs, was checked against the document's text. Each judgement is a rule
@@ -184,12 +191,101 @@ model, not a full reading) shows long tables drifting out of line, with rows dro
 added, routing and check numbers swapped, and NuExtract scaling numbers (28,609 written as
 28,609,000,000 and 0.08 as 8).
 
+## The last pass: one sentence, or a few lines of code
+
+Three current models were run on 4 and 5 Oct 2026 with the prompt above (v1) and with v2, which
+adds one sentence to the system prompt:
+
+> Include every field the schema defines; when the document gives no value for a field, write null.
+
+Same 300 documents, same scorer, reasoning level medium throughout
+(`evals/<model>__extract-text-v1.json` and `-v2.json`; intervals from `scripts/bootstrap.py`):
+
+| Model | Official, v1 | Official, v2 | v2 minus v1, 95% interval | Counted, v1 | Counted, v2 |
+|---|---|---|---|---|---|
+| `gpt-6.1-sol` | 0.9407 | 0.9910 | +0.0503 [+0.0374, +0.0642] | 0.9374 | 0.9877 |
+| Gemini 3.8 Flash | 0.9441 | 0.9886 | +0.0445 [+0.0310, +0.0584] | 0.9408 | 0.9853 |
+| `gpt-6-luna` | 0.9364 | 0.9580 | +0.0217 [+0.0094, +0.0336] | 0.9330 | 0.9547 |
+
+**One sentence is worth about five points**, as the error analysis predicted. With it,
+`gpt-6.1-sol` gets 99.1% of the fields right on the official score.
+
+**The same fix by code.** [`scripts/null_fill.py`](scripts/null_fill.py) takes each stored answer
+and adds, as `null`, every field its schema defines that the answer leaves out; a second variant
+also turns `""` into `null`. It reads only the schema ([`evals/schemas.jsonl`](evals/schemas.jsonl),
+hash-checked against the split) and the model's answer, never the correct answer. Official score:
+
+| Answers | As answered | Missing fields → `null` | And `""` → `null` |
+|---|---|---|---|
+| `gpt-6.1-sol`, v1 | 0.9407 | 0.9863 | 0.9886 |
+| Gemini 3.8 Flash, v1 | 0.9441 | 0.9886 | 0.9907 |
+| `gpt-6-luna`, v1 | 0.9364 | 0.9813 | 0.9834 |
+| `gpt-6-luna`, v2 | 0.9580 | 0.9805 | 0.9805 |
+| Gemini 3.8 Flash, 18 Sep | 0.9446 | 0.9852 | 0.9874 |
+| `gpt-5.6-terra`, 18 Sep | 0.9380 | 0.9820 | 0.9854 |
+| `gpt-5.6-luna`, 18 Sep | 0.9372 | 0.9788 | 0.9829 |
+
+- **For Sol and Gemini, the code and the sentence do the same job.** v2 minus filled v1 is
+  +0.0025 [−0.0015, +0.0070] for Sol and −0.0021 [−0.0072, +0.0028] for Gemini, and their v2
+  answers leave out no schema field.
+- **`gpt-6-luna` did not follow the sentence.** Its v2 answers still leave out 2,156 schema
+  fields, and filled v1 beats v2 by 0.0254 [0.0135, 0.0384]. Where a model does not reliably
+  follow a formatting instruction, the code is the dependable fix: it costs nothing and needs no
+  new run.
+- **The 18 Sep order holds.** Filled, the three API models score 0.987, 0.985 and 0.983.
+- **The small models gain little.** Qwen moves from 0.818 to 0.825 (its 25 answers that are not
+  valid JSON cannot be filled); NuExtract does not move, since its template already writes every
+  field.
+
+**How these runs were made.** They did not all go through the paid API, and each answer records
+its route (`answers_by_route` in a run's JSON where a run mixes them):
+
+- **OpenAI** ran through the `pi` command-line client with its tools, context files and system
+  prompt switched off and ours in their place. Its `openai/` provider bills the API, so most
+  OpenAI answers are API answers. Its `openai-codex/` provider uses a ChatGPT Plus plan, which
+  takes no temperature and may add a fixed preamble of its own; 136 of Sol's 300 v1 answers and
+  1 of Luna's came that way.
+- **Gemini** ran through Google's Antigravity command-line client on a free sign-in, with a custom
+  agent that drops the client's own prompt and tools. A tool call would have made that answer an
+  error; none occurred.
+
+Before a route was trusted, a stored model was re-run through it and compared with its 18 Sep API
+run, document by document ([`scripts/calibrate.py`](scripts/calibrate.py), paired bootstrap of
+re-run minus stored run):
+
+| Re-run | Official gap, 95% interval | Counted gap, 95% interval | Documents scored the same |
+|---|---|---|---|
+| `gpt-5.6-luna`, API again | +0.0013 [−0.0061, +0.0103] | −0.0000 [−0.0099, +0.0097] | 276 of 300 |
+| `gpt-5.6-luna`, ChatGPT Plus | +0.0027 [−0.0017, +0.0102] | +0.0027 [−0.0017, +0.0103] | 276 of 300 |
+| Gemini 3.8 Flash, Antigravity | −0.0005 [−0.0066, +0.0051] | +0.0028 [−0.0046, +0.0109] | 264 of 300 |
+
+Every interval contains zero, so the route makes no measurable difference here. Gemini's
+Antigravity re-run is also its v1 run above. The API re-run measures the run-to-run noise: about
+one document in twelve changes score between two identical runs.
+
+There is no euro column for the last pass, since it mixed API billing with plan allowances, and
+seconds per document are not comparable either: the command-line clients add start-up time.
+
+## What next
+
+- **Read the images.** Every score here starts from the document's correct text. The same 300
+  documents read from their images would add the reading error a real pipeline has.
+- **Enforce the schema instead of asking for it.** A structured-output mode with every field
+  required could stop omissions like Luna's at the source; it has not been tested against the
+  code fill.
+- **A second reader** for the hand judgements in `scripts/error_reading.py`.
+
 ## Limits
 
 - **Text input only.** These scores say nothing about reading images; a real pipeline adds
   that error on top.
-- **One run per model.** At temperature 0 the runs should vary little, but this was not measured.
-- **A sixth model was not scored.** `gpt-6-astra` ran out of API credit at 194 of 300 documents.
+- **One run per model.** A second API run of `gpt-5.6-luna` changed the score of 24 of the 300
+  documents and the mean by +0.0013, well inside its interval (last pass, calibration table).
+  Gaps under about one point are not a ranking.
+- **A ninth model was not scored.** `gpt-6-astra` stopped at 236 of 300 documents when the API
+  credit ran out, and its ChatGPT Plus allowance was too small to finish it.
+- **The last pass is one prompt change on three models.** v2 was not run on the 18 Sep models or
+  the laptop models; the code fill was.
 - **Mostly tidy documents.** By the dataset's own labels, 97 of the 300 are clean digital files,
   95 good scans, 79 poor scans and 29 photographs. With text input this split does not affect
   the scores above.
@@ -199,7 +295,7 @@ added, routing and check numbers swapped, and NuExtract scaling numbers (28,609 
   the same allowed values. The converter also drops field descriptions (247 of the 300 schemas
   have them). Passing them in through its instructions section raised its scores on a 60-document
   trial; that change was not run on all 300.
-- **Prices change.** The euro figures use 18 Sep 2026 list prices.
+- **Prices change.** The euro figures use 18 Sep 2026 list prices; the last pass has none.
 - **No model was trained here.** This is a measurement, not a fine-tuning result.
 - **One person read the errors.** The hand judgements had no second reader. Each one is written
   out in `scripts/error_reading.py`, so any of them can be checked and disputed.
@@ -215,28 +311,30 @@ cd document-extraction-eval
 ```
 
 That installs the scorer's one dependency, runs its tests, re-scores every stored answer and
-checks each one against the published files, then prints the results table, the scorer audit,
-the bootstrap intervals and the error analysis, checking that every error has a type and every
-large-model real-value error a hand judgement. GitHub runs the same script on every change and weekly (the badge above).
+checks each one against the published files, then prints the results and last-pass tables, the
+scorer audit, the bootstrap intervals, the route calibration, the null-fill re-scoring and the
+error analysis, checking that every error has a type and every large-model real-value error a
+hand judgement. GitHub runs the same script on every change and weekly (the badge above).
 
 ## Files
 
 | Path | What it holds |
 |---|---|
 | `evals/eval_split_v1.json` | The frozen split: 300 test and 700 training IDs, hashes for the 300 |
-| `evals/predictions/<model>.jsonl` | Every raw answer, with the correct answer, tokens and seconds; published only so the scores can be checked |
-| `evals/per_document/<model>.jsonl` | Every document's scores |
-| `evals/<model>.json` | Each model's summary, cost and breakdowns |
+| `evals/predictions/<run>.jsonl` | Every raw answer, with the correct answer, tokens and seconds; published only so the scores can be checked. `<run>` is the model for the 18 Sep runs, `<model>__extract-text-v1` or `-v2` for the last pass, `gpt-5.6-luna__api-rerun` and `__codex` for the calibration |
+| `evals/per_document/<run>.jsonl` | Every document's scores |
+| `evals/<run>.json` | Each run's summary, cost and breakdowns |
+| `evals/schemas.jsonl` | The 300 test documents' JSON schemas, read only by the null-fill |
 | `scorer/` | The official scorer (unchanged), the counted score, both test suites |
 | `src/summarize_eval.py` | Turned raw answers into the per-document and summary files |
 | `evals/error_analysis.json` | Every model's errors by type: points lost, fields, documents, by document kind and per document |
-| `scripts/` | `verify.py`, `scorer_audit.ts`, `bootstrap.py`, `error_analysis.ts` and its tests, `error_reading.py`, `reproduce.sh` |
+| `scripts/` | `verify.py`, `scorer_audit.ts`, `bootstrap.py`, `calibrate.py`, `null_fill.py`, `error_analysis.ts` and its tests, `error_reading.py`, `reproduce.sh` |
 
 ## Licence
 
 MIT ([LICENSE](LICENSE)). `scorer/official_json_accuracy.ts` is byte-identical to `src/evaluation/json.ts`
 in [getomni-ai/benchmark](https://github.com/getomni-ai/benchmark) at commit `cf84a584`, and its
 tests are that repository's, with only the import path changed. Both are under the MIT licence in
-[`scorer/OMNI_LICENSE`](scorer/OMNI_LICENSE). The correct answers in `evals/predictions/` come
-from the [getomni-ai/ocr-benchmark](https://huggingface.co/datasets/getomni-ai/ocr-benchmark)
+[`scorer/OMNI_LICENSE`](scorer/OMNI_LICENSE). The correct answers in `evals/predictions/` and the
+schemas in `evals/schemas.jsonl` come from the [getomni-ai/ocr-benchmark](https://huggingface.co/datasets/getomni-ai/ocr-benchmark)
 dataset, also MIT.
