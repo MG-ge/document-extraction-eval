@@ -2,7 +2,7 @@
 
 The last pass ran partly through sign-ins (ChatGPT Plus via the Codex route, Gemini via
 Antigravity) instead of the paid API. Each pair below re-runs a stored model at the same
-reasoning effort through another route; a paired bootstrap (same 10,000 resamples of the 300
+reasoning effort through another route; a paired bootstrap (10,000 resamples of the 300
 documents, same seed as scripts/bootstrap.py) of re-run minus stored API run says whether the
 route changes the score. An interval containing 0 means no measurable difference on this test set.
 

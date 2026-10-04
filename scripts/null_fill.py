@@ -12,7 +12,7 @@ the correct answer:
   can be a real value, and telling the two apart needs the document.
 
 The v2 runs are filled too: whatever the fill still adds there is what v2 left out despite the
-sentence. Each variant is re-scored with `scorer/score.ts`, then paired bootstraps (same draws and seed as
+sentence. Each variant is re-scored with `scorer/score.ts`, then paired bootstraps (same number of draws and seed as
 scripts/bootstrap.py) say whether the fill moves the score, and whether prompt v2 still beats it.
 
 Usage: python3 scripts/null_fill.py   (run from the repository root; needs bun)
