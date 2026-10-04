@@ -162,8 +162,9 @@ and the bootstrap intervals.
 
 ## Licence
 
-MIT ([LICENSE](LICENSE)). `scorer/official_json_accuracy.ts` and its tests come from
-[getomni-ai/benchmark](https://github.com/getomni-ai/benchmark) under the MIT licence in
+MIT ([LICENSE](LICENSE)). `scorer/official_json_accuracy.ts` is byte-identical to `src/evaluation/json.ts`
+in [getomni-ai/benchmark](https://github.com/getomni-ai/benchmark) at commit `cf84a584`, and its
+tests are that repository's, with only the import path changed. Both are under the MIT licence in
 [`scorer/OMNI_LICENSE`](scorer/OMNI_LICENSE). The correct answers in `evals/predictions/` come
 from the [getomni-ai/ocr-benchmark](https://huggingface.co/datasets/getomni-ai/ocr-benchmark)
 dataset, also MIT.
