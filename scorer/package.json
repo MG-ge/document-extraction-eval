@@ -1,0 +1,13 @@
+{
+  "name": "document-extraction-scorer",
+  "private": true,
+  "type": "module",
+  "description": "Wrapper around the OmniAI benchmark's own scoring code. Their file is copied in unchanged so the official number is produced by their arithmetic, not ours.",
+  "dependencies": {
+    "json-diff": "^1.0.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.10.0"
+  }
+}

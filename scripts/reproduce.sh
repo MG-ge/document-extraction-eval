@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# From a fresh clone to the published tables. Needs bun and python3; no API keys.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+(cd scorer && bun install --frozen-lockfile && bun test)
+
+echo
+python3 scripts/verify.py
+echo
+echo "Scorer audit:"
+bun scripts/scorer_audit.ts
+echo
+echo "Paired bootstrap:"
+python3 scripts/bootstrap.py
