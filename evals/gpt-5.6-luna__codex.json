@@ -1,0 +1,326 @@
+{
+  "run": {
+    "label": "gpt-5.6-luna, prompt v1, through ChatGPT Plus (Codex route)",
+    "kind": "calibration re-run of a stored model, medium reasoning effort",
+    "model": "openai-codex/gpt-5.6-luna:medium",
+    "served_by": "pi",
+    "prompt_version": "extract-text-v1",
+    "input": "the document's correct text plus the JSON schema; no image is read",
+    "temperature": null,
+    "max_output_tokens": null,
+    "documents": 300,
+    "split_file": "evals/eval_split_v1.json",
+    "split_fingerprint": "2ed8fd9b1e0348df",
+    "scored_by": "scorer/score.ts: the benchmark publisher's own code, unchanged, plus a counted score that also counts whole lists missing or invented (docs/SCORER_AUDIT.md)"
+  },
+  "score": {
+    "mean_score_case_insensitive": 0.9399,
+    "mean_score_case_sensitive": 0.9396,
+    "mean_score_counted_case_insensitive": 0.9366,
+    "mean_score_counted_case_sensitive": 0.9362,
+    "note": "higher is better, 1.0 is every field right; the published leaderboard used the official case-insensitive number; the counted number also counts whole lists missing or invented and is the one our audit uses",
+    "documents_scoring_zero_counted": 1,
+    "answers_that_were_not_valid_json": 0,
+    "requests_that_failed_outright": 0,
+    "median_document_score_case_insensitive": 1.0,
+    "documents_scoring_zero": 0,
+    "documents_scoring_one": 192
+  },
+  "by_image_quality": {
+    "CLEAN": {
+      "documents": 97,
+      "mean_score_case_insensitive": 0.9437,
+      "mean_score_case_sensitive": 0.9436,
+      "mean_score_counted_case_insensitive": 0.9437,
+      "answers_that_were_not_valid_json": 0
+    },
+    "HIGH_QUALITY": {
+      "documents": 95,
+      "mean_score_case_insensitive": 0.9336,
+      "mean_score_case_sensitive": 0.9334,
+      "mean_score_counted_case_insensitive": 0.9336,
+      "answers_that_were_not_valid_json": 0
+    },
+    "LOW_QUALITY": {
+      "documents": 79,
+      "mean_score_case_insensitive": 0.9375,
+      "mean_score_case_sensitive": 0.9375,
+      "mean_score_counted_case_insensitive": 0.9375,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PHOTO": {
+      "documents": 29,
+      "mean_score_case_insensitive": 0.9544,
+      "mean_score_case_sensitive": 0.9521,
+      "mean_score_counted_case_insensitive": 0.92,
+      "answers_that_were_not_valid_json": 0
+    }
+  },
+  "by_answer_size": {
+    "1: up to 20 fields": {
+      "documents": 73,
+      "mean_score_case_insensitive": 0.9879,
+      "mean_score_case_sensitive": 0.987,
+      "mean_score_counted_case_insensitive": 0.9742,
+      "answers_that_were_not_valid_json": 0
+    },
+    "2: 21 to 60 fields": {
+      "documents": 131,
+      "mean_score_case_insensitive": 0.9717,
+      "mean_score_case_sensitive": 0.9716,
+      "mean_score_counted_case_insensitive": 0.9717,
+      "answers_that_were_not_valid_json": 0
+    },
+    "3: 61 to 150 fields": {
+      "documents": 63,
+      "mean_score_case_insensitive": 0.8899,
+      "mean_score_case_sensitive": 0.8897,
+      "mean_score_counted_case_insensitive": 0.8899,
+      "answers_that_were_not_valid_json": 0
+    },
+    "4: more than 150 fields": {
+      "documents": 33,
+      "mean_score_case_insensitive": 0.8029,
+      "mean_score_case_sensitive": 0.8029,
+      "mean_score_counted_case_insensitive": 0.8029,
+      "answers_that_were_not_valid_json": 0
+    }
+  },
+  "by_document_kind": {
+    "ACCOUNT_STATEMENT": {
+      "documents": 16,
+      "mean_score_case_insensitive": 0.9885,
+      "mean_score_case_sensitive": 0.9885,
+      "mean_score_counted_case_insensitive": 0.9885,
+      "answers_that_were_not_valid_json": 0
+    },
+    "BANK_CHECK": {
+      "documents": 16,
+      "mean_score_case_insensitive": 0.9574,
+      "mean_score_case_sensitive": 0.9574,
+      "mean_score_counted_case_insensitive": 0.9574,
+      "answers_that_were_not_valid_json": 0
+    },
+    "CHART": {
+      "documents": 15,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "COMMERCIAL_LEASE_AGREEMENT": {
+      "documents": 16,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "CREDIT_CARD_STATEMENT": {
+      "documents": 15,
+      "mean_score_case_insensitive": 0.9078,
+      "mean_score_case_sensitive": 0.9078,
+      "mean_score_counted_case_insensitive": 0.9078,
+      "answers_that_were_not_valid_json": 0
+    },
+    "DELIVERY_NOTE": {
+      "documents": 15,
+      "mean_score_case_insensitive": 0.9862,
+      "mean_score_case_sensitive": 0.9862,
+      "mean_score_counted_case_insensitive": 0.9862,
+      "answers_that_were_not_valid_json": 0
+    },
+    "DRIVER_LICENSE": {
+      "documents": 1,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "EARNINGS_REPORT": {
+      "documents": 1,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "EQUIPMENT_INSPECTION": {
+      "documents": 15,
+      "mean_score_case_insensitive": 0.8768,
+      "mean_score_case_sensitive": 0.8768,
+      "mean_score_counted_case_insensitive": 0.8768,
+      "answers_that_were_not_valid_json": 0
+    },
+    "FORM": {
+      "documents": 2,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "FORM_1040": {
+      "documents": 15,
+      "mean_score_case_insensitive": 0.9764,
+      "mean_score_case_sensitive": 0.9764,
+      "mean_score_counted_case_insensitive": 0.9764,
+      "answers_that_were_not_valid_json": 0
+    },
+    "GLOSSARY": {
+      "documents": 15,
+      "mean_score_case_insensitive": 0.9245,
+      "mean_score_case_sensitive": 0.9245,
+      "mean_score_counted_case_insensitive": 0.9245,
+      "answers_that_were_not_valid_json": 0
+    },
+    "LIST": {
+      "documents": 1,
+      "mean_score_case_insensitive": 0.9852,
+      "mean_score_case_sensitive": 0.9852,
+      "mean_score_counted_case_insensitive": 0.9852,
+      "answers_that_were_not_valid_json": 0
+    },
+    "MATH_VQA": {
+      "documents": 1,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "NUTRITION": {
+      "documents": 15,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 0.9977,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PATENT": {
+      "documents": 16,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PATIENT_INTAKE": {
+      "documents": 16,
+      "mean_score_case_insensitive": 0.9375,
+      "mean_score_case_sensitive": 0.9375,
+      "mean_score_counted_case_insensitive": 0.9375,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PAY_IN_SHEET": {
+      "documents": 15,
+      "mean_score_case_insensitive": 0.6326,
+      "mean_score_case_sensitive": 0.6326,
+      "mean_score_counted_case_insensitive": 0.6326,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PETITION_FORM": {
+      "documents": 15,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PHOTO_CHART": {
+      "documents": 1,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PHOTO_NUTRITION": {
+      "documents": 1,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PHOTO_RECEIPT": {
+      "documents": 3,
+      "mean_score_case_insensitive": 0.832,
+      "mean_score_case_sensitive": 0.832,
+      "mean_score_counted_case_insensitive": 0.832,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PHOTO_TABLE": {
+      "documents": 2,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 0.5,
+      "answers_that_were_not_valid_json": 0
+    },
+    "PROXY_VOTING": {
+      "documents": 15,
+      "mean_score_case_insensitive": 0.9844,
+      "mean_score_case_sensitive": 0.9844,
+      "mean_score_counted_case_insensitive": 0.9844,
+      "answers_that_were_not_valid_json": 0
+    },
+    "REAL_ESTATE": {
+      "documents": 18,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "SCANNED_FORM": {
+      "documents": 2,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "SCANNED_TABLE": {
+      "documents": 1,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "SHIFT_SCHEDULE": {
+      "documents": 16,
+      "mean_score_case_insensitive": 0.7099,
+      "mean_score_case_sensitive": 0.7099,
+      "mean_score_counted_case_insensitive": 0.7099,
+      "answers_that_were_not_valid_json": 0
+    },
+    "SHIPPING_INVOICE": {
+      "documents": 16,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 1.0,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "SLIDES": {
+      "documents": 1,
+      "mean_score_case_insensitive": 1.0,
+      "mean_score_case_sensitive": 0.9333,
+      "mean_score_counted_case_insensitive": 1.0,
+      "answers_that_were_not_valid_json": 0
+    },
+    "TABLE": {
+      "documents": 3,
+      "mean_score_case_insensitive": 0.8903,
+      "mean_score_case_sensitive": 0.8903,
+      "mean_score_counted_case_insensitive": 0.8903,
+      "answers_that_were_not_valid_json": 0
+    }
+  },
+  "work": {
+    "tokens_in_total": 466694,
+    "tokens_out_total": 183832,
+    "seconds_per_document_median": 12.05,
+    "seconds_total_if_run_one_at_a_time": 4516.0
+  },
+  "cost": {
+    "usd_per_million_input_tokens": 0.0,
+    "usd_per_million_output_tokens": 0.0,
+    "price_source": "",
+    "price_checked_on": "",
+    "eur_per_usd": null,
+    "eur_rate_source": "",
+    "usd_for_all_300_documents": 0.0,
+    "eur_for_all_300_documents": null,
+    "eur_per_document": null
+  },
+  "per_document_scores": "evals/per_document/gpt-5.6-luna__codex.jsonl"
+}

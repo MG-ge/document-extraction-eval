@@ -20,7 +20,7 @@ import pathlib
 import statistics
 import subprocess
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 SPLIT = pathlib.Path("evals/eval_split_v1.json")
 
@@ -69,6 +69,10 @@ def main():
     ap.add_argument("--price-checked-on", default="")
     ap.add_argument("--eur-per-usd", type=float, default=0.0)
     ap.add_argument("--eur-rate-source", default="")
+    ap.add_argument("--temperature", default=0, type=lambda v: None if v == "unset" else float(v),
+                    help='"unset" for routes that send no temperature')
+    ap.add_argument("--max-output-tokens", default=16384, type=lambda v: None if v == "unset" else int(v),
+                    help='"unset" for routes that send no output cap')
     args = ap.parse_args()
 
     preds = [json.loads(l) for l in pathlib.Path(args.predictions).open() if l.strip()]
@@ -109,6 +113,7 @@ def main():
     usd = tin / 1e6 * args.usd_per_million_input + tout / 1e6 * args.usd_per_million_output
     eur = usd * args.eur_per_usd if args.eur_per_usd else None
 
+    routes = Counter(p["model"] for p in preds)
     report = {
         "run": {
             "label": args.label,
@@ -116,9 +121,10 @@ def main():
             "model": preds[0]["model"],
             "served_by": preds[0]["backend"],
             "prompt_version": preds[0]["prompt_version"],
+            **({"answers_by_route": dict(routes)} if len(routes) > 1 else {}),
             "input": "the document's correct text plus the JSON schema; no image is read",
-            "temperature": 0,
-            "max_output_tokens": 16384,
+            "temperature": args.temperature,
+            "max_output_tokens": args.max_output_tokens,
             "documents": len(rows),
             "split_file": str(SPLIT),
             "split_fingerprint": split["manifest_sha256"][:16],

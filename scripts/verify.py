@@ -9,7 +9,8 @@ Three checks, any failure exits non-zero:
    in `evals/per_document/<model>.jsonl`.
 3. The means equal the ones in `evals/<model>.json` to 4 decimals.
 
-Then prints the results table.
+Then prints the results table, the last-pass table (prompt v1 against v2) and checks the two
+calibration re-runs the same way.
 
 Usage: python3 scripts/verify.py   (run from the repository root; needs bun)
 """
@@ -27,6 +28,12 @@ MODELS = [
     "qwen3.5-4b-8bit_untrained",
     "nuextract3-4b",
 ]
+LAST_PASS = [
+    f"{m}__extract-text-{v}"
+    for m in ("gpt-6.1-sol", "gemini-3.8-flash", "gpt-6-luna")
+    for v in ("v1", "v2")
+]
+CALIBRATION = ["gpt-5.6-luna__api-rerun", "gpt-5.6-luna__codex"]
 SCORES = ["score_strict", "score_loose", "score_counted_strict", "score_counted_loose"]
 MEANS = {
     "mean_score_strict": "mean_score_case_sensitive",
@@ -46,7 +53,8 @@ def jsonl(path):
 
 
 rows_out = []
-for m in MODELS:
+last_pass_out = []
+for m in MODELS + LAST_PASS + CALIBRATION:
     preds = jsonl(f"evals/predictions/{m}.jsonl")
     ids = [str(p["id"]) for p in preds]
     if len(ids) != len(set(ids)) or set(ids) != eval_ids:
@@ -74,6 +82,18 @@ for m in MODELS:
         if round(totals[k], 4) != round(report["score"][rk], 4):
             failures.append(f"{m}: {k} {totals[k]} != {report['score'][rk]} in evals/{m}.json")
 
+    if m in LAST_PASS:
+        last_pass_out.append(
+            (
+                report["run"]["label"],
+                totals["mean_score_loose"],
+                totals["mean_score_counted_loose"],
+                totals["predictions_that_were_not_valid_json"],
+                report["work"]["seconds_per_document_median"],
+            )
+        )
+    if m not in MODELS:
+        continue
     rows_out.append(
         (
             report["run"]["label"],
@@ -90,7 +110,14 @@ print("|---|---|---|---|---|---|")
 for label, off, cnt, bad_json, eur, sec in rows_out:
     print(f"| {label} | {off:.4f} | {cnt:.4f} | {bad_json} | {eur:.2f} | {sec:.2f} |")
 
+print("\nLast pass, prompt v1 against v2 (no cost column: the runs mixed the paid API with sign-in routes, so no one price applies):\n")
+print("| Model and prompt | Official score | Counted score | Answers not valid JSON | Median seconds per document |")
+print("|---|---|---|---|---|")
+for label, off, cnt, bad_json, sec in last_pass_out:
+    print(f"| {label} | {off:.4f} | {cnt:.4f} | {bad_json} | {sec:.2f} |")
+
 if failures:
     print("\nFAILED:\n" + "\n".join(failures), file=sys.stderr)
     sys.exit(1)
-print("\nverify: all 5 models re-scored; hashes, per-document scores and means match", file=sys.stderr)
+n = len(MODELS + LAST_PASS + CALIBRATION)
+print(f"\nverify: all {n} runs re-scored; hashes, per-document scores and means match", file=sys.stderr)

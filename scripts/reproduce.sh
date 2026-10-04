@@ -15,6 +15,9 @@ echo
 echo "Paired bootstrap:"
 python3 scripts/bootstrap.py
 echo
+echo "Calibration of the last-pass routes:"
+python3 scripts/calibrate.py
+echo
 echo "Error analysis:"
 bun scripts/error_analysis.ts --check
 echo

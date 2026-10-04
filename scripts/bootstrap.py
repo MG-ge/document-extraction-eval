@@ -16,6 +16,13 @@ PAIRS = [
     ("gemini-3.8-flash", "gpt-5.6-terra"),
     ("gpt-5.6-terra", "gpt-5.6-luna"),
 ]
+# Last pass: what the one added sentence in prompt v2 changes, per model. Drawn after the
+# pairs above so their published intervals keep the same random draws.
+LAST_PASS_PAIRS = [
+    ("gpt-6.1-sol__extract-text-v2", "gpt-6.1-sol__extract-text-v1"),
+    ("gemini-3.8-flash__extract-text-v2", "gemini-3.8-flash__extract-text-v1"),
+    ("gpt-6-luna__extract-text-v2", "gpt-6-luna__extract-text-v1"),
+]
 DRAWS = 10_000
 SEED = 20261004
 
@@ -26,11 +33,12 @@ def scores(model, key):
 
 
 rng = random.Random(SEED)
-for key, name in (("score_loose", "official"), ("score_counted_loose", "counted")):
-    for a, b in PAIRS:
-        sa, sb = scores(a, key), scores(b, key)
-        diffs = [sa[i] - sb[i] for i in sorted(sa)]
-        n = len(diffs)
-        means = sorted(sum(rng.choices(diffs, k=n)) / n for _ in range(DRAWS))
-        lo, hi = means[int(0.025 * DRAWS)], means[int(0.975 * DRAWS) - 1]
-        print(f"{name:8} {a} minus {b}: {sum(diffs) / n:+.4f}, 95% interval [{lo:+.4f}, {hi:+.4f}]")
+for pairs in (PAIRS, LAST_PASS_PAIRS):
+    for key, name in (("score_loose", "official"), ("score_counted_loose", "counted")):
+        for a, b in pairs:
+            sa, sb = scores(a, key), scores(b, key)
+            diffs = [sa[i] - sb[i] for i in sorted(sa)]
+            n = len(diffs)
+            means = sorted(sum(rng.choices(diffs, k=n)) / n for _ in range(DRAWS))
+            lo, hi = means[int(0.025 * DRAWS)], means[int(0.975 * DRAWS) - 1]
+            print(f"{name:8} {a} minus {b}: {sum(diffs) / n:+.4f}, 95% interval [{lo:+.4f}, {hi:+.4f}]")
