@@ -6,13 +6,16 @@
 measures one thing: how well a model turns a document's text into the structured fields a
 schema asks for. Reading a scan or a photo is a separate step, and it is not tested here.
 
-Two questions:
+Three questions:
 
 1. How accurate and how expensive are current models at pulling fields out of business
    documents such as invoices, bank statements, leases and tax forms?
 2. Can the published benchmark's score be trusted? Partly. Its scorer ignores whole lists that
    are missing or invented, so an empty answer scores 0.627 and an answer with every line item
    removed scores a perfect 1.000.
+3. Where do the models lose their points? For the large models, mostly not on reading: about 80%
+   of their lost score is how an empty field is written, and they make about 40 real mistakes
+   each in 22,176 fields.
 
 Everything below can be re-checked from this repository in a few minutes, with no API keys.
 
@@ -118,6 +121,68 @@ as a training reward, the official scorer would teach a model to leave out line 
 removing every list earns a perfect score. Line items are the hardest part of most business
 documents, so this rewards skipping exactly the work that matters.
 
+## Where the points go
+
+Every error the counted score charges was sorted into a type by rule
+([`scripts/error_analysis.ts`](scripts/error_analysis.ts), walking the scorer's own diff, so the
+types add up exactly to each document's score). Points lost out of 100:
+
+| Model | Points lost | An empty field written differently | A real value missing, extra or different | Answer not valid JSON | Same value, written differently |
+|---|---|---|---|---|---|
+| Gemini 3.8 Flash | 6.19 | 4.78 | 1.04 | 0.33 | 0.04 |
+| `gpt-5.6-terra` | 6.53 | 5.31 | 1.20 | 0 | 0.02 |
+| `gpt-5.6-luna` | 6.62 | 5.20 | 1.35 | 0 | 0.07 |
+| Qwen 3.5 4B, untrained | 26.49 | 4.78 | 13.38 | 8.33 | 0 |
+| NuExtract3 4B | 23.06 | 2.91 | 20.10 | 0 | 0.05 |
+
+Each type, with field and document counts, is in [`evals/error_analysis.json`](evals/error_analysis.json).
+
+**About 80% of the large models' lost score is how an empty field is written.** The correct
+answers write a field the document leaves blank as `null`. The large models mostly leave such a
+field out (2,619 to 2,713 fields each) or write `0`, `""` or `{}` instead (365 to 447). Every
+field they left out is optional in its schema, and the prompt never said how to write an empty
+field, so these answers are valid; the score counts them wrong only because the key is missing.
+Asking for every schema field, with `null` when the document has no value, should recover most
+of these points. That was not run, since it needs a new paid run of every model.
+
+**The rest was read by hand.** Every real-value error of the three large models, 60 documents
+and 105 document-model pairs, was checked against the document's text. Each judgement is a rule
+in [`scripts/error_reading.py`](scripts/error_reading.py), which checks that every error is
+covered by exactly one. Fields, of 22,176:
+
+| Whose error | Gemini 3.8 Flash | `gpt-5.6-terra` | `gpt-5.6-luna` |
+|---|---|---|---|
+| The model's: the document clearly supports the correct answer | 301 (263 from one answer that is not valid JSON) | 41 | 39 |
+| The correct answer's: the document contradicts it | 12 | 12 | 12 |
+| Neither: the document supports both | 58 | 72 | 80 |
+
+- **Model mistakes are few and specific.** Apart from Gemini's one broken answer, each large model
+  makes about 40 real mistakes in 22,176 fields. They are concentrated in a few documents: a chart's
+  list of revenue segments left half out (Gemini and `gpt-5.6-terra`, 20 fields each); the wrong
+  row of a shipping table taken as the most recent shipment (`gpt-5.6-luna`, 19 fields); a row
+  label the schema has no field for, added anyway (11 each). The rest are one or two fields each:
+  a care-of company named as the transfer agent, a cheque's routing and check numbers swapped, a
+  tick box misread, an ID with its last character dropped.
+- **Some correct answers are wrong.** One schema asks for `migration_option` while its correct
+  answer uses `migration_options`; all three models follow the schema and lose 10 fields. One
+  receipt reads `INDUNA` and its correct answer says `INDINIA`.
+- **Many "errors" are a reading the document allows.** A glossary that repeats a letter heading
+  after a page break is merged into one section in the correct answer and kept as two by the
+  models (43 to 49 fields). A heading "Pay-In Sheet - 2025-09" is copied whole where the correct
+  answer drops the date. A city is given with its state where the schema has no state field.
+- **Input formatting leaks into answers.** The input text is Markdown, which writes `*` as `\*`.
+  `gpt-5.6-luna` copied the backslash into 48 fields, `gpt-5.6-terra` into 16, Gemini into none.
+
+So the three large models are level on real mistakes as well as on score, and their score gaps
+are smaller than the effect of the empty-field convention.
+
+**The small models fail differently.** Their losses are mostly real values. Of Qwen's 25 answers
+that are not valid JSON, 19 break in their last few characters, closing the object with the wrong
+brackets; the content before is mostly sound. A sample of their other errors (eight per type and
+model, not a full reading) shows long tables drifting out of line, with rows dropped and others
+added, routing and check numbers swapped, and NuExtract scaling numbers (28,609 written as
+28,609,000,000 and 0.08 as 8).
+
 ## Limits
 
 - **Text input only.** These scores say nothing about reading images; a real pipeline adds
@@ -135,6 +200,8 @@ documents, so this rewards skipping exactly the work that matters.
   trial; that change was not run on all 300.
 - **Prices change.** The euro figures use 18 Sep 2026 list prices.
 - **No model was trained here.** This is a measurement, not a fine-tuning result.
+- **One person read the errors.** The hand judgements had no second reader. Each one is written
+  out in `scripts/error_reading.py`, so any of them can be checked and disputed.
 
 ## Reproduce
 
@@ -147,8 +214,9 @@ cd document-extraction-eval
 ```
 
 That installs the scorer's one dependency, runs its tests, re-scores every stored answer and
-checks each one against the published files, then prints the results table, the scorer audit
-and the bootstrap intervals. GitHub runs the same script on every change and weekly (the badge above).
+checks each one against the published files, then prints the results table, the scorer audit,
+the bootstrap intervals and the error analysis, checking that every error has a type and every
+large-model real-value error a hand judgement. GitHub runs the same script on every change and weekly (the badge above).
 
 ## Files
 
@@ -160,7 +228,8 @@ and the bootstrap intervals. GitHub runs the same script on every change and wee
 | `evals/<model>.json` | Each model's summary, cost and breakdowns |
 | `scorer/` | The official scorer (unchanged), the counted score, both test suites |
 | `src/summarize_eval.py` | Turned raw answers into the per-document and summary files |
-| `scripts/` | `verify.py`, `scorer_audit.ts`, `bootstrap.py`, `reproduce.sh` |
+| `evals/error_analysis.json` | Every model's errors by type: points lost, fields, documents, by document kind and per document |
+| `scripts/` | `verify.py`, `scorer_audit.ts`, `bootstrap.py`, `error_analysis.ts`, `error_reading.py`, `reproduce.sh` |
 
 ## Licence
 

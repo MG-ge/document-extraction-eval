@@ -1,0 +1,5707 @@
+{
+ "gemini-3.8-flash": {
+  "documents": 300,
+  "points_lost": {
+   "not_json": 0.0033,
+   "empty_left_out": 0.0415,
+   "value_left_out": 0.0051,
+   "value_added": 0.004,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 0.0063,
+   "filled_empty": 0,
+   "emptied_value": 0.0001,
+   "format_only": 0.0004,
+   "markdown_escape": 0,
+   "wrong_value": 0.0012,
+   "wrong_shape": 0
+  },
+  "fields": {
+   "not_json": 263,
+   "empty_left_out": 2619,
+   "value_left_out": 45,
+   "value_added": 42,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 365,
+   "filled_empty": 0,
+   "emptied_value": 1,
+   "format_only": 17,
+   "markdown_escape": 0,
+   "wrong_value": 20,
+   "wrong_shape": 0
+  },
+  "documents_affected": {
+   "not_json": 1,
+   "empty_left_out": 54,
+   "value_left_out": 9,
+   "value_added": 10,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 24,
+   "filled_empty": 0,
+   "emptied_value": 1,
+   "format_only": 17,
+   "markdown_escape": 0,
+   "wrong_value": 16,
+   "wrong_shape": 0
+  },
+  "by_document_kind": {
+   "DRIVER_LICENSE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 20,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "BANK_CHECK": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 21,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SCANNED_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "TABLE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 2,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_RECEIPT": {
+    "not_json": 0,
+    "empty_left_out": 34,
+    "value_left_out": 1,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 1,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 4,
+    "wrong_shape": 0
+   },
+   "PATIENT_INTAKE": {
+    "not_json": 0,
+    "empty_left_out": 13,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "MATH_VQA": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 1,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   },
+   "COMMERCIAL_LEASE_AGREEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SHIPPING_INVOICE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PETITION_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PAY_IN_SHEET": {
+    "not_json": 0,
+    "empty_left_out": 417,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 8,
+    "wrong_shape": 0
+   },
+   "ACCOUNT_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SHIFT_SCHEDULE": {
+    "not_json": 0,
+    "empty_left_out": 1979,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 16,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "REAL_ESTATE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "GLOSSARY": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 17,
+    "value_added": 26,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "DELIVERY_NOTE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "FORM_1040": {
+    "not_json": 0,
+    "empty_left_out": 4,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 12,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PROXY_VOTING": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 11,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 7,
+    "wrong_shape": 0
+   },
+   "PATENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "EQUIPMENT_INSPECTION": {
+    "not_json": 0,
+    "empty_left_out": 152,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "CREDIT_CARD_STATEMENT": {
+    "not_json": 263,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 332,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 5,
+    "value_added": 5,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SCANNED_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SLIDES": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "EARNINGS_REPORT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "LIST": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   }
+  },
+  "per_document": {
+   "1": {
+    "value_left_out": 20
+   },
+   "5": {},
+   "7": {},
+   "8": {},
+   "17": {},
+   "27": {},
+   "29": {},
+   "30": {},
+   "40": {},
+   "41": {
+    "empty_left_out": 10,
+    "value_left_out": 2
+   },
+   "47": {},
+   "49": {},
+   "56": {
+    "empty_left_out": 33,
+    "value_left_out": 1,
+    "wrong_value": 3
+   },
+   "59": {
+    "empty_left_out": 1,
+    "wrong_value": 1
+   },
+   "64": {},
+   "65": {},
+   "73": {},
+   "77": {},
+   "86": {},
+   "90": {},
+   "94": {
+    "empty_left_out": 23,
+    "wrong_value": 1
+   },
+   "96": {},
+   "99": {
+    "empty_left_out": 212,
+    "format_only": 1
+   },
+   "104": {},
+   "106": {},
+   "107": {},
+   "110": {},
+   "113": {},
+   "117": {
+    "not_json": 263
+   },
+   "127": {
+    "wrong_value": 1
+   },
+   "136": {},
+   "137": {},
+   "145": {
+    "empty_as_zero_or_blank": 1
+   },
+   "148": {},
+   "149": {},
+   "154": {},
+   "155": {},
+   "159": {
+    "empty_as_zero_or_blank": 3
+   },
+   "160": {},
+   "162": {
+    "empty_left_out": 285,
+    "format_only": 1
+   },
+   "164": {},
+   "165": {
+    "empty_as_zero_or_blank": 1
+   },
+   "166": {},
+   "167": {},
+   "170": {
+    "empty_left_out": 1
+   },
+   "171": {},
+   "173": {},
+   "176": {},
+   "179": {},
+   "180": {},
+   "184": {},
+   "187": {},
+   "191": {
+    "empty_left_out": 20
+   },
+   "192": {},
+   "193": {},
+   "198": {
+    "wrong_value": 1
+   },
+   "204": {},
+   "215": {},
+   "221": {},
+   "222": {},
+   "229": {
+    "empty_left_out": 84,
+    "format_only": 1
+   },
+   "230": {},
+   "232": {},
+   "234": {},
+   "235": {
+    "empty_left_out": 71
+   },
+   "239": {
+    "wrong_value": 1
+   },
+   "240": {},
+   "241": {
+    "empty_left_out": 159,
+    "format_only": 1
+   },
+   "244": {},
+   "247": {},
+   "253": {},
+   "257": {},
+   "258": {
+    "empty_left_out": 263,
+    "format_only": 1
+   },
+   "259": {
+    "empty_left_out": 1
+   },
+   "260": {},
+   "261": {
+    "value_added": 4
+   },
+   "262": {
+    "empty_left_out": 144,
+    "format_only": 1
+   },
+   "263": {
+    "empty_left_out": 24,
+    "wrong_value": 1
+   },
+   "268": {},
+   "269": {
+    "wrong_value": 1
+   },
+   "270": {
+    "empty_left_out": 21
+   },
+   "281": {},
+   "282": {},
+   "285": {
+    "empty_as_zero_or_blank": 1
+   },
+   "286": {},
+   "287": {},
+   "289": {
+    "empty_as_zero_or_blank": 1
+   },
+   "293": {},
+   "295": {},
+   "296": {
+    "empty_left_out": 21
+   },
+   "297": {
+    "value_added": 3
+   },
+   "302": {},
+   "303": {},
+   "309": {},
+   "312": {
+    "value_left_out": 5,
+    "value_added": 8
+   },
+   "317": {},
+   "318": {},
+   "320": {},
+   "326": {},
+   "327": {},
+   "334": {},
+   "335": {
+    "empty_as_zero_or_blank": 53
+   },
+   "338": {},
+   "340": {},
+   "343": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "348": {},
+   "349": {
+    "empty_as_zero_or_blank": 53
+   },
+   "355": {
+    "empty_as_zero_or_blank": 3
+   },
+   "357": {},
+   "360": {},
+   "361": {},
+   "366": {},
+   "370": {
+    "empty_left_out": 1
+   },
+   "378": {
+    "empty_left_out": 16,
+    "wrong_value": 1
+   },
+   "381": {
+    "value_added": 1,
+    "wrong_value": 1
+   },
+   "383": {
+    "empty_left_out": 18
+   },
+   "386": {
+    "empty_left_out": 2
+   },
+   "392": {},
+   "394": {
+    "empty_left_out": 70,
+    "format_only": 1
+   },
+   "398": {},
+   "401": {},
+   "403": {
+    "empty_left_out": 4
+   },
+   "404": {
+    "empty_as_zero_or_blank": 3
+   },
+   "408": {},
+   "409": {},
+   "412": {},
+   "413": {},
+   "415": {},
+   "420": {},
+   "424": {
+    "empty_as_zero_or_blank": 54
+   },
+   "427": {},
+   "428": {},
+   "431": {},
+   "433": {},
+   "434": {
+    "empty_left_out": 2
+   },
+   "435": {},
+   "437": {
+    "empty_left_out": 3
+   },
+   "445": {},
+   "448": {},
+   "451": {
+    "empty_left_out": 21
+   },
+   "457": {},
+   "458": {
+    "empty_left_out": 22
+   },
+   "465": {
+    "format_only": 1,
+    "wrong_value": 1
+   },
+   "471": {
+    "value_added": 3,
+    "wrong_value": 3
+   },
+   "473": {},
+   "474": {},
+   "475": {},
+   "478": {
+    "format_only": 1
+   },
+   "486": {},
+   "487": {},
+   "489": {},
+   "494": {},
+   "504": {},
+   "508": {
+    "empty_as_zero_or_blank": 2
+   },
+   "509": {},
+   "511": {
+    "empty_left_out": 24
+   },
+   "517": {
+    "empty_left_out": 1
+   },
+   "523": {
+    "empty_left_out": 82,
+    "format_only": 1
+   },
+   "524": {
+    "empty_left_out": 149,
+    "format_only": 1
+   },
+   "527": {},
+   "533": {},
+   "536": {},
+   "539": {
+    "empty_left_out": 43
+   },
+   "540": {
+    "empty_left_out": 75,
+    "wrong_value": 1
+   },
+   "542": {
+    "empty_left_out": 18,
+    "wrong_value": 1
+   },
+   "543": {},
+   "553": {
+    "empty_as_zero_or_blank": 5
+   },
+   "556": {},
+   "558": {},
+   "565": {},
+   "569": {},
+   "570": {},
+   "576": {},
+   "587": {
+    "empty_left_out": 28
+   },
+   "589": {},
+   "595": {
+    "empty_left_out": 1
+   },
+   "600": {},
+   "603": {
+    "value_left_out": 3,
+    "value_added": 5
+   },
+   "607": {},
+   "609": {
+    "empty_left_out": 3
+   },
+   "612": {
+    "empty_left_out": 18
+   },
+   "613": {},
+   "614": {},
+   "615": {},
+   "616": {
+    "empty_left_out": 1
+   },
+   "618": {},
+   "620": {
+    "empty_left_out": 20,
+    "wrong_value": 1
+   },
+   "622": {},
+   "623": {
+    "empty_as_zero_or_blank": 1
+   },
+   "629": {},
+   "630": {},
+   "636": {},
+   "638": {},
+   "643": {},
+   "644": {},
+   "651": {},
+   "654": {},
+   "658": {},
+   "661": {},
+   "662": {},
+   "664": {
+    "emptied_value": 1
+   },
+   "679": {},
+   "680": {},
+   "681": {},
+   "685": {},
+   "690": {
+    "empty_left_out": 130,
+    "format_only": 1
+   },
+   "708": {},
+   "710": {
+    "empty_as_zero_or_blank": 58
+   },
+   "712": {
+    "empty_as_zero_or_blank": 3
+   },
+   "713": {},
+   "716": {},
+   "718": {},
+   "719": {},
+   "725": {
+    "empty_as_zero_or_blank": 59
+   },
+   "728": {},
+   "730": {},
+   "735": {
+    "empty_left_out": 23
+   },
+   "740": {
+    "value_left_out": 1,
+    "value_added": 2
+   },
+   "743": {},
+   "746": {},
+   "756": {},
+   "759": {
+    "format_only": 1
+   },
+   "760": {},
+   "762": {
+    "empty_as_zero_or_blank": 1
+   },
+   "764": {
+    "empty_left_out": 1
+   },
+   "767": {
+    "empty_left_out": 1
+   },
+   "771": {},
+   "773": {
+    "empty_left_out": 1
+   },
+   "774": {
+    "value_left_out": 5,
+    "value_added": 7
+   },
+   "776": {},
+   "781": {},
+   "784": {},
+   "791": {},
+   "796": {},
+   "804": {},
+   "806": {
+    "value_left_out": 3,
+    "value_added": 4
+   },
+   "809": {
+    "empty_as_zero_or_blank": 55
+   },
+   "812": {},
+   "813": {
+    "empty_as_zero_or_blank": 1
+   },
+   "818": {},
+   "825": {},
+   "829": {},
+   "830": {},
+   "835": {
+    "empty_as_zero_or_blank": 1
+   },
+   "839": {},
+   "842": {},
+   "860": {},
+   "861": {},
+   "876": {},
+   "882": {},
+   "888": {},
+   "891": {},
+   "892": {},
+   "894": {},
+   "895": {},
+   "900": {},
+   "901": {},
+   "903": {},
+   "904": {},
+   "906": {
+    "empty_left_out": 11,
+    "wrong_value": 1
+   },
+   "907": {},
+   "909": {},
+   "911": {
+    "value_left_out": 5,
+    "value_added": 5
+   },
+   "913": {
+    "empty_left_out": 69,
+    "format_only": 1
+   },
+   "915": {
+    "empty_left_out": 1
+   },
+   "916": {},
+   "917": {},
+   "919": {},
+   "922": {},
+   "926": {},
+   "927": {},
+   "928": {},
+   "929": {},
+   "930": {},
+   "931": {},
+   "933": {},
+   "934": {},
+   "935": {
+    "empty_left_out": 262,
+    "format_only": 1
+   },
+   "942": {},
+   "943": {},
+   "944": {},
+   "947": {},
+   "950": {},
+   "951": {
+    "empty_left_out": 52
+   },
+   "953": {},
+   "954": {},
+   "957": {},
+   "970": {
+    "empty_left_out": 70,
+    "format_only": 1
+   },
+   "971": {
+    "format_only": 1
+   },
+   "972": {},
+   "973": {
+    "empty_as_zero_or_blank": 3
+   },
+   "974": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "975": {},
+   "979": {},
+   "982": {
+    "empty_left_out": 1
+   },
+   "986": {},
+   "987": {},
+   "993": {},
+   "994": {
+    "empty_as_zero_or_blank": 1
+   },
+   "997": {}
+  }
+ },
+ "gpt-5.6-terra": {
+  "documents": 300,
+  "points_lost": {
+   "not_json": 0,
+   "empty_left_out": 0.0449,
+   "value_left_out": 0.0053,
+   "value_added": 0.0048,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 0.0082,
+   "filled_empty": 0.0002,
+   "emptied_value": 0,
+   "format_only": 0,
+   "markdown_escape": 0.0002,
+   "wrong_value": 0.0017,
+   "wrong_shape": 0
+  },
+  "fields": {
+   "not_json": 0,
+   "empty_left_out": 2713,
+   "value_left_out": 47,
+   "value_added": 52,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 423,
+   "filled_empty": 2,
+   "emptied_value": 0,
+   "format_only": 2,
+   "markdown_escape": 16,
+   "wrong_value": 24,
+   "wrong_shape": 0
+  },
+  "documents_affected": {
+   "not_json": 0,
+   "empty_left_out": 61,
+   "value_left_out": 10,
+   "value_added": 13,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 30,
+   "filled_empty": 1,
+   "emptied_value": 0,
+   "format_only": 2,
+   "markdown_escape": 1,
+   "wrong_value": 19,
+   "wrong_shape": 0
+  },
+  "by_document_kind": {
+   "CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 20,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "MATH_VQA": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "BANK_CHECK": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 21,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "DRIVER_LICENSE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   },
+   "FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "TABLE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 2,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_RECEIPT": {
+    "not_json": 0,
+    "empty_left_out": 33,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 1,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 3,
+    "wrong_shape": 0
+   },
+   "SCANNED_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "COMMERCIAL_LEASE_AGREEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SHIPPING_INVOICE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PATIENT_INTAKE": {
+    "not_json": 0,
+    "empty_left_out": 17,
+    "value_left_out": 0,
+    "value_added": 3,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 6,
+    "filled_empty": 2,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   },
+   "PETITION_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PAY_IN_SHEET": {
+    "not_json": 0,
+    "empty_left_out": 502,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 5,
+    "wrong_shape": 0
+   },
+   "REAL_ESTATE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "ACCOUNT_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 1,
+    "value_added": 3,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "GLOSSARY": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 19,
+    "value_added": 30,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "DELIVERY_NOTE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PROXY_VOTING": {
+    "not_json": 0,
+    "empty_left_out": 1,
+    "value_left_out": 0,
+    "value_added": 11,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 12,
+    "wrong_shape": 0
+   },
+   "SHIFT_SCHEDULE": {
+    "not_json": 0,
+    "empty_left_out": 1979,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 2,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "FORM_1040": {
+    "not_json": 0,
+    "empty_left_out": 9,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 11,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PATENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "CREDIT_CARD_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 384,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 16,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "EQUIPMENT_INSPECTION": {
+    "not_json": 0,
+    "empty_left_out": 152,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 5,
+    "value_added": 5,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SCANNED_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SLIDES": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "EARNINGS_REPORT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "LIST": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   }
+  },
+  "per_document": {
+   "1": {
+    "value_left_out": 20
+   },
+   "5": {},
+   "7": {
+    "wrong_value": 1
+   },
+   "8": {},
+   "17": {},
+   "27": {},
+   "29": {},
+   "30": {},
+   "40": {},
+   "41": {
+    "empty_left_out": 10,
+    "value_left_out": 2
+   },
+   "47": {},
+   "49": {},
+   "56": {
+    "empty_left_out": 33,
+    "wrong_value": 2
+   },
+   "59": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "64": {
+    "empty_left_out": 1
+   },
+   "65": {},
+   "73": {},
+   "77": {},
+   "86": {},
+   "90": {},
+   "94": {
+    "empty_left_out": 23,
+    "wrong_value": 1
+   },
+   "96": {},
+   "99": {
+    "empty_left_out": 212
+   },
+   "104": {},
+   "106": {
+    "value_left_out": 2,
+    "value_added": 4
+   },
+   "107": {},
+   "110": {},
+   "113": {},
+   "117": {
+    "empty_as_zero_or_blank": 52
+   },
+   "127": {
+    "wrong_value": 1
+   },
+   "136": {},
+   "137": {
+    "empty_left_out": 3
+   },
+   "145": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "148": {},
+   "149": {},
+   "154": {},
+   "155": {},
+   "159": {
+    "empty_as_zero_or_blank": 3
+   },
+   "160": {},
+   "162": {
+    "empty_left_out": 285
+   },
+   "164": {},
+   "165": {
+    "empty_as_zero_or_blank": 1
+   },
+   "166": {},
+   "167": {},
+   "170": {
+    "empty_left_out": 1
+   },
+   "171": {},
+   "173": {},
+   "176": {},
+   "179": {},
+   "180": {},
+   "184": {
+    "wrong_value": 1
+   },
+   "187": {
+    "wrong_value": 1
+   },
+   "191": {
+    "empty_left_out": 20
+   },
+   "192": {},
+   "193": {
+    "empty_as_zero_or_blank": 2
+   },
+   "198": {
+    "empty_left_out": 46
+   },
+   "204": {},
+   "215": {},
+   "221": {},
+   "222": {},
+   "229": {
+    "empty_left_out": 84
+   },
+   "230": {},
+   "232": {},
+   "234": {},
+   "235": {
+    "empty_left_out": 71
+   },
+   "239": {
+    "wrong_value": 1
+   },
+   "240": {},
+   "241": {
+    "empty_left_out": 159
+   },
+   "244": {},
+   "247": {},
+   "253": {},
+   "257": {},
+   "258": {
+    "empty_left_out": 263
+   },
+   "259": {
+    "empty_left_out": 1
+   },
+   "260": {},
+   "261": {
+    "value_added": 4,
+    "wrong_value": 2
+   },
+   "262": {
+    "empty_left_out": 144
+   },
+   "263": {
+    "empty_left_out": 24
+   },
+   "268": {},
+   "269": {
+    "wrong_value": 2
+   },
+   "270": {
+    "empty_left_out": 21
+   },
+   "281": {},
+   "282": {},
+   "285": {
+    "empty_as_zero_or_blank": 1
+   },
+   "286": {},
+   "287": {},
+   "289": {
+    "empty_as_zero_or_blank": 1
+   },
+   "293": {},
+   "295": {},
+   "296": {
+    "empty_left_out": 21
+   },
+   "297": {
+    "empty_left_out": 1,
+    "value_added": 3
+   },
+   "302": {},
+   "303": {},
+   "309": {},
+   "312": {
+    "value_left_out": 5,
+    "value_added": 8
+   },
+   "317": {},
+   "318": {},
+   "320": {
+    "empty_left_out": 1
+   },
+   "326": {},
+   "327": {},
+   "334": {},
+   "335": {
+    "empty_as_zero_or_blank": 53
+   },
+   "338": {},
+   "340": {},
+   "343": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "348": {},
+   "349": {
+    "empty_as_zero_or_blank": 53
+   },
+   "355": {
+    "empty_as_zero_or_blank": 3
+   },
+   "357": {},
+   "360": {},
+   "361": {},
+   "366": {
+    "value_left_out": 1,
+    "value_added": 3
+   },
+   "370": {
+    "empty_as_zero_or_blank": 1
+   },
+   "378": {
+    "empty_left_out": 16
+   },
+   "381": {
+    "value_added": 1,
+    "wrong_value": 1
+   },
+   "383": {
+    "empty_left_out": 18
+   },
+   "386": {
+    "empty_left_out": 3
+   },
+   "392": {},
+   "394": {
+    "empty_left_out": 70
+   },
+   "398": {},
+   "401": {},
+   "403": {
+    "empty_left_out": 4
+   },
+   "404": {
+    "empty_as_zero_or_blank": 3
+   },
+   "408": {},
+   "409": {
+    "empty_left_out": 39
+   },
+   "412": {},
+   "413": {},
+   "415": {},
+   "420": {},
+   "424": {
+    "empty_as_zero_or_blank": 54,
+    "markdown_escape": 16
+   },
+   "427": {},
+   "428": {},
+   "431": {},
+   "433": {},
+   "434": {
+    "empty_as_zero_or_blank": 2
+   },
+   "435": {},
+   "437": {
+    "empty_left_out": 3
+   },
+   "445": {},
+   "448": {},
+   "451": {
+    "empty_left_out": 21
+   },
+   "457": {
+    "empty_left_out": 1
+   },
+   "458": {
+    "empty_left_out": 22
+   },
+   "465": {},
+   "471": {
+    "value_added": 3,
+    "wrong_value": 2
+   },
+   "473": {},
+   "474": {},
+   "475": {},
+   "478": {
+    "format_only": 1
+   },
+   "486": {},
+   "487": {},
+   "489": {},
+   "494": {},
+   "504": {},
+   "508": {
+    "empty_as_zero_or_blank": 2
+   },
+   "509": {},
+   "511": {
+    "empty_left_out": 24
+   },
+   "517": {
+    "empty_left_out": 1
+   },
+   "523": {
+    "empty_left_out": 82
+   },
+   "524": {
+    "empty_left_out": 149
+   },
+   "527": {},
+   "533": {},
+   "536": {},
+   "539": {
+    "empty_left_out": 43
+   },
+   "540": {
+    "empty_left_out": 75,
+    "wrong_value": 1
+   },
+   "542": {
+    "empty_left_out": 18
+   },
+   "543": {},
+   "553": {
+    "empty_as_zero_or_blank": 5
+   },
+   "556": {},
+   "558": {
+    "wrong_value": 2
+   },
+   "565": {},
+   "569": {
+    "empty_as_zero_or_blank": 1,
+    "filled_empty": 2
+   },
+   "570": {},
+   "576": {},
+   "587": {
+    "empty_left_out": 28
+   },
+   "589": {},
+   "595": {
+    "empty_left_out": 1
+   },
+   "600": {},
+   "603": {
+    "value_left_out": 3,
+    "value_added": 5
+   },
+   "607": {},
+   "609": {
+    "empty_left_out": 3
+   },
+   "612": {
+    "empty_left_out": 18
+   },
+   "613": {},
+   "614": {},
+   "615": {},
+   "616": {
+    "empty_left_out": 1
+   },
+   "618": {},
+   "620": {
+    "empty_left_out": 20,
+    "wrong_value": 1
+   },
+   "622": {},
+   "623": {
+    "empty_as_zero_or_blank": 1
+   },
+   "629": {},
+   "630": {},
+   "636": {},
+   "638": {},
+   "643": {},
+   "644": {},
+   "651": {},
+   "654": {},
+   "658": {},
+   "661": {},
+   "662": {},
+   "664": {},
+   "679": {},
+   "680": {},
+   "681": {},
+   "685": {},
+   "690": {
+    "empty_left_out": 130
+   },
+   "708": {},
+   "710": {
+    "empty_as_zero_or_blank": 58
+   },
+   "712": {
+    "empty_as_zero_or_blank": 2
+   },
+   "713": {},
+   "716": {},
+   "718": {},
+   "719": {},
+   "725": {
+    "empty_as_zero_or_blank": 59
+   },
+   "728": {},
+   "730": {},
+   "735": {
+    "empty_left_out": 23
+   },
+   "740": {
+    "value_left_out": 1,
+    "value_added": 2
+   },
+   "743": {},
+   "746": {},
+   "756": {},
+   "759": {},
+   "760": {},
+   "762": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "764": {
+    "empty_left_out": 1,
+    "wrong_value": 1
+   },
+   "767": {
+    "empty_left_out": 1
+   },
+   "771": {},
+   "773": {
+    "empty_left_out": 2,
+    "value_added": 3
+   },
+   "774": {
+    "value_left_out": 5,
+    "value_added": 7
+   },
+   "776": {},
+   "781": {},
+   "784": {},
+   "791": {},
+   "796": {},
+   "804": {},
+   "806": {
+    "value_left_out": 3,
+    "value_added": 4
+   },
+   "809": {
+    "empty_as_zero_or_blank": 55
+   },
+   "812": {},
+   "813": {
+    "empty_as_zero_or_blank": 2
+   },
+   "818": {},
+   "825": {},
+   "829": {},
+   "830": {
+    "wrong_value": 1
+   },
+   "835": {
+    "empty_as_zero_or_blank": 1
+   },
+   "839": {},
+   "842": {},
+   "860": {},
+   "861": {},
+   "876": {},
+   "882": {},
+   "888": {},
+   "891": {},
+   "892": {},
+   "894": {},
+   "895": {},
+   "900": {},
+   "901": {},
+   "903": {},
+   "904": {},
+   "906": {
+    "empty_left_out": 11,
+    "wrong_value": 1
+   },
+   "907": {},
+   "909": {},
+   "911": {
+    "value_left_out": 5,
+    "value_added": 5
+   },
+   "913": {
+    "empty_left_out": 69
+   },
+   "915": {
+    "empty_left_out": 1
+   },
+   "916": {},
+   "917": {},
+   "919": {},
+   "922": {},
+   "926": {},
+   "927": {},
+   "928": {},
+   "929": {},
+   "930": {},
+   "931": {},
+   "933": {},
+   "934": {},
+   "935": {
+    "empty_left_out": 262
+   },
+   "942": {},
+   "943": {},
+   "944": {},
+   "947": {},
+   "950": {},
+   "951": {
+    "empty_left_out": 52,
+    "wrong_value": 1
+   },
+   "953": {},
+   "954": {},
+   "957": {},
+   "970": {
+    "empty_left_out": 70
+   },
+   "971": {
+    "format_only": 1
+   },
+   "972": {},
+   "973": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 2
+   },
+   "974": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "975": {},
+   "979": {},
+   "982": {
+    "empty_left_out": 2
+   },
+   "986": {},
+   "987": {},
+   "993": {},
+   "994": {
+    "empty_as_zero_or_blank": 1
+   },
+   "997": {}
+  }
+ },
+ "gpt-5.6-luna": {
+  "documents": 300,
+  "points_lost": {
+   "not_json": 0,
+   "empty_left_out": 0.0427,
+   "value_left_out": 0.0034,
+   "value_added": 0.0048,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 0.0093,
+   "filled_empty": 0.0007,
+   "emptied_value": 0,
+   "format_only": 0.0001,
+   "markdown_escape": 0.0006,
+   "wrong_value": 0.0046,
+   "wrong_shape": 0
+  },
+  "fields": {
+   "not_json": 0,
+   "empty_left_out": 2671,
+   "value_left_out": 27,
+   "value_added": 49,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 447,
+   "filled_empty": 13,
+   "emptied_value": 0,
+   "format_only": 8,
+   "markdown_escape": 48,
+   "wrong_value": 42,
+   "wrong_shape": 0
+  },
+  "documents_affected": {
+   "not_json": 0,
+   "empty_left_out": 55,
+   "value_left_out": 9,
+   "value_added": 12,
+   "empty_added": 0,
+   "empty_as_zero_or_blank": 32,
+   "filled_empty": 2,
+   "emptied_value": 0,
+   "format_only": 8,
+   "markdown_escape": 2,
+   "wrong_value": 24,
+   "wrong_shape": 0
+  },
+  "by_document_kind": {
+   "CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "DRIVER_LICENSE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "BANK_CHECK": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 21,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 3,
+    "wrong_shape": 0
+   },
+   "TABLE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 2,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "MATH_VQA": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SCANNED_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "COMMERCIAL_LEASE_AGREEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SHIPPING_INVOICE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 3,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 16,
+    "wrong_shape": 0
+   },
+   "PHOTO_RECEIPT": {
+    "not_json": 0,
+    "empty_left_out": 1,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 22,
+    "filled_empty": 11,
+    "emptied_value": 0,
+    "format_only": 1,
+    "markdown_escape": 0,
+    "wrong_value": 3,
+    "wrong_shape": 0
+   },
+   "PATIENT_INTAKE": {
+    "not_json": 0,
+    "empty_left_out": 11,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 9,
+    "filled_empty": 2,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PETITION_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PAY_IN_SHEET": {
+    "not_json": 0,
+    "empty_left_out": 502,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 15,
+    "wrong_shape": 0
+   },
+   "ACCOUNT_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "REAL_ESTATE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "GLOSSARY": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 19,
+    "value_added": 30,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "DELIVERY_NOTE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SHIFT_SCHEDULE": {
+    "not_json": 0,
+    "empty_left_out": 1979,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 7,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "FORM_1040": {
+    "not_json": 0,
+    "empty_left_out": 6,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 11,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PROXY_VOTING": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 1,
+    "value_added": 11,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 3,
+    "wrong_shape": 0
+   },
+   "PATENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "CREDIT_CARD_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 384,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 48,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "EQUIPMENT_INSPECTION": {
+    "not_json": 0,
+    "empty_left_out": 152,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 5,
+    "value_added": 5,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SCANNED_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SLIDES": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "EARNINGS_REPORT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "LIST": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   }
+  },
+  "per_document": {
+   "1": {},
+   "5": {},
+   "7": {},
+   "8": {},
+   "17": {},
+   "27": {},
+   "29": {},
+   "30": {},
+   "40": {},
+   "41": {
+    "empty_left_out": 10,
+    "value_left_out": 2
+   },
+   "47": {},
+   "49": {},
+   "56": {
+    "empty_as_zero_or_blank": 22,
+    "filled_empty": 11,
+    "format_only": 1,
+    "wrong_value": 2
+   },
+   "59": {
+    "empty_left_out": 1,
+    "wrong_value": 1
+   },
+   "64": {
+    "empty_as_zero_or_blank": 1
+   },
+   "65": {},
+   "73": {},
+   "77": {},
+   "86": {},
+   "90": {},
+   "94": {
+    "empty_left_out": 23,
+    "wrong_value": 1
+   },
+   "96": {},
+   "99": {
+    "empty_left_out": 212
+   },
+   "104": {},
+   "106": {
+    "value_left_out": 2,
+    "value_added": 4
+   },
+   "107": {},
+   "110": {},
+   "113": {},
+   "117": {
+    "empty_as_zero_or_blank": 52,
+    "markdown_escape": 11
+   },
+   "127": {},
+   "136": {},
+   "137": {
+    "empty_left_out": 3
+   },
+   "145": {
+    "empty_as_zero_or_blank": 2
+   },
+   "148": {},
+   "149": {},
+   "154": {},
+   "155": {},
+   "159": {
+    "empty_as_zero_or_blank": 3
+   },
+   "160": {},
+   "162": {
+    "empty_left_out": 285
+   },
+   "164": {},
+   "165": {
+    "empty_as_zero_or_blank": 1
+   },
+   "166": {},
+   "167": {},
+   "170": {
+    "empty_left_out": 1
+   },
+   "171": {},
+   "173": {},
+   "176": {},
+   "179": {},
+   "180": {},
+   "184": {},
+   "187": {
+    "value_left_out": 1
+   },
+   "191": {
+    "empty_left_out": 20
+   },
+   "192": {},
+   "193": {
+    "empty_as_zero_or_blank": 2
+   },
+   "198": {
+    "empty_left_out": 46,
+    "wrong_value": 1
+   },
+   "204": {},
+   "215": {},
+   "221": {},
+   "222": {},
+   "229": {
+    "empty_left_out": 84,
+    "format_only": 1
+   },
+   "230": {},
+   "232": {},
+   "234": {},
+   "235": {
+    "empty_left_out": 71,
+    "wrong_value": 1
+   },
+   "239": {},
+   "240": {
+    "wrong_value": 1
+   },
+   "241": {
+    "empty_left_out": 159
+   },
+   "244": {},
+   "247": {},
+   "253": {},
+   "257": {},
+   "258": {
+    "empty_left_out": 263,
+    "format_only": 1
+   },
+   "259": {
+    "empty_left_out": 1
+   },
+   "260": {},
+   "261": {
+    "value_added": 4
+   },
+   "262": {
+    "empty_left_out": 144,
+    "format_only": 1
+   },
+   "263": {
+    "empty_left_out": 24,
+    "wrong_value": 1
+   },
+   "268": {},
+   "269": {},
+   "270": {
+    "empty_left_out": 21
+   },
+   "281": {},
+   "282": {},
+   "285": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "286": {},
+   "287": {},
+   "289": {
+    "empty_as_zero_or_blank": 1
+   },
+   "293": {},
+   "295": {},
+   "296": {
+    "empty_left_out": 21
+   },
+   "297": {
+    "value_added": 3
+   },
+   "302": {},
+   "303": {},
+   "309": {},
+   "312": {
+    "value_left_out": 5,
+    "value_added": 8
+   },
+   "317": {},
+   "318": {},
+   "320": {},
+   "326": {},
+   "327": {},
+   "334": {},
+   "335": {
+    "empty_as_zero_or_blank": 53
+   },
+   "338": {},
+   "340": {},
+   "343": {
+    "empty_as_zero_or_blank": 2
+   },
+   "348": {},
+   "349": {
+    "empty_as_zero_or_blank": 53
+   },
+   "355": {
+    "empty_as_zero_or_blank": 3
+   },
+   "357": {},
+   "360": {},
+   "361": {},
+   "366": {},
+   "370": {
+    "empty_as_zero_or_blank": 1
+   },
+   "378": {
+    "empty_left_out": 16,
+    "wrong_value": 1
+   },
+   "381": {
+    "value_added": 1
+   },
+   "383": {
+    "empty_left_out": 18,
+    "wrong_value": 1
+   },
+   "386": {
+    "empty_as_zero_or_blank": 2
+   },
+   "392": {},
+   "394": {
+    "empty_left_out": 70,
+    "format_only": 1
+   },
+   "398": {},
+   "401": {},
+   "403": {
+    "empty_left_out": 4
+   },
+   "404": {
+    "empty_as_zero_or_blank": 3
+   },
+   "408": {},
+   "409": {
+    "empty_left_out": 39,
+    "wrong_value": 1
+   },
+   "412": {},
+   "413": {},
+   "415": {},
+   "420": {},
+   "424": {
+    "empty_as_zero_or_blank": 54
+   },
+   "427": {},
+   "428": {},
+   "431": {},
+   "433": {},
+   "434": {
+    "empty_as_zero_or_blank": 2
+   },
+   "435": {},
+   "437": {
+    "empty_left_out": 3
+   },
+   "445": {},
+   "448": {},
+   "451": {
+    "empty_left_out": 21,
+    "wrong_value": 1
+   },
+   "457": {
+    "empty_left_out": 1
+   },
+   "458": {
+    "empty_left_out": 22
+   },
+   "465": {},
+   "471": {
+    "value_added": 3,
+    "wrong_value": 2
+   },
+   "473": {},
+   "474": {},
+   "475": {},
+   "478": {
+    "format_only": 1
+   },
+   "486": {},
+   "487": {},
+   "489": {},
+   "494": {},
+   "504": {},
+   "508": {
+    "empty_as_zero_or_blank": 2
+   },
+   "509": {},
+   "511": {
+    "empty_left_out": 24
+   },
+   "517": {
+    "empty_left_out": 1
+   },
+   "523": {
+    "empty_left_out": 82
+   },
+   "524": {
+    "empty_left_out": 149,
+    "format_only": 1
+   },
+   "527": {},
+   "533": {},
+   "536": {},
+   "539": {
+    "empty_left_out": 43,
+    "wrong_value": 1
+   },
+   "540": {
+    "empty_left_out": 75,
+    "wrong_value": 1
+   },
+   "542": {
+    "empty_left_out": 18,
+    "wrong_value": 1
+   },
+   "543": {},
+   "553": {
+    "empty_as_zero_or_blank": 5
+   },
+   "556": {},
+   "558": {
+    "wrong_value": 2
+   },
+   "565": {},
+   "569": {
+    "empty_left_out": 1
+   },
+   "570": {},
+   "576": {},
+   "587": {
+    "empty_left_out": 28,
+    "wrong_value": 1
+   },
+   "589": {},
+   "595": {
+    "empty_left_out": 1
+   },
+   "600": {},
+   "603": {
+    "value_left_out": 3,
+    "value_added": 5
+   },
+   "607": {
+    "wrong_value": 1
+   },
+   "609": {
+    "empty_left_out": 3
+   },
+   "612": {
+    "empty_left_out": 18,
+    "wrong_value": 1
+   },
+   "613": {},
+   "614": {},
+   "615": {},
+   "616": {
+    "empty_left_out": 1
+   },
+   "618": {},
+   "620": {
+    "empty_left_out": 20,
+    "wrong_value": 1
+   },
+   "622": {
+    "value_added": 3,
+    "wrong_value": 16
+   },
+   "623": {
+    "empty_as_zero_or_blank": 1
+   },
+   "629": {},
+   "630": {},
+   "636": {},
+   "638": {},
+   "643": {},
+   "644": {},
+   "651": {},
+   "654": {},
+   "658": {},
+   "661": {},
+   "662": {},
+   "664": {},
+   "679": {},
+   "680": {},
+   "681": {},
+   "685": {},
+   "690": {
+    "empty_left_out": 130
+   },
+   "708": {},
+   "710": {
+    "empty_as_zero_or_blank": 58
+   },
+   "712": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "713": {},
+   "716": {},
+   "718": {},
+   "719": {},
+   "725": {
+    "empty_as_zero_or_blank": 59
+   },
+   "728": {},
+   "730": {},
+   "735": {
+    "empty_left_out": 23
+   },
+   "740": {
+    "value_left_out": 1,
+    "value_added": 2
+   },
+   "743": {},
+   "746": {},
+   "756": {},
+   "759": {},
+   "760": {},
+   "762": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "764": {
+    "empty_left_out": 1,
+    "filled_empty": 2
+   },
+   "767": {
+    "empty_left_out": 1
+   },
+   "771": {},
+   "773": {
+    "empty_as_zero_or_blank": 1
+   },
+   "774": {
+    "value_left_out": 5,
+    "value_added": 7
+   },
+   "776": {},
+   "781": {},
+   "784": {},
+   "791": {},
+   "796": {},
+   "804": {},
+   "806": {
+    "value_left_out": 3,
+    "value_added": 4
+   },
+   "809": {
+    "empty_as_zero_or_blank": 55
+   },
+   "812": {},
+   "813": {
+    "empty_as_zero_or_blank": 1
+   },
+   "818": {},
+   "825": {},
+   "829": {},
+   "830": {},
+   "835": {
+    "empty_as_zero_or_blank": 1
+   },
+   "839": {},
+   "842": {},
+   "860": {},
+   "861": {},
+   "876": {},
+   "882": {},
+   "888": {},
+   "891": {},
+   "892": {},
+   "894": {},
+   "895": {},
+   "900": {},
+   "901": {},
+   "903": {},
+   "904": {},
+   "906": {
+    "empty_left_out": 11,
+    "wrong_value": 1
+   },
+   "907": {},
+   "909": {},
+   "911": {
+    "value_left_out": 5,
+    "value_added": 5
+   },
+   "913": {
+    "empty_left_out": 69
+   },
+   "915": {
+    "empty_left_out": 1
+   },
+   "916": {},
+   "917": {},
+   "919": {},
+   "922": {},
+   "926": {},
+   "927": {},
+   "928": {},
+   "929": {
+    "markdown_escape": 37
+   },
+   "930": {},
+   "931": {},
+   "933": {},
+   "934": {},
+   "935": {
+    "empty_left_out": 262
+   },
+   "942": {},
+   "943": {},
+   "944": {},
+   "947": {},
+   "950": {},
+   "951": {
+    "empty_left_out": 52,
+    "wrong_value": 1
+   },
+   "953": {},
+   "954": {},
+   "957": {},
+   "970": {
+    "empty_left_out": 70,
+    "format_only": 1
+   },
+   "971": {},
+   "972": {},
+   "973": {
+    "empty_as_zero_or_blank": 2
+   },
+   "974": {
+    "empty_left_out": 1,
+    "empty_as_zero_or_blank": 1
+   },
+   "975": {},
+   "979": {},
+   "982": {
+    "empty_left_out": 1
+   },
+   "986": {},
+   "987": {},
+   "993": {},
+   "994": {
+    "empty_as_zero_or_blank": 1
+   },
+   "997": {}
+  }
+ },
+ "qwen3.5-4b-8bit_untrained": {
+  "documents": 300,
+  "points_lost": {
+   "not_json": 0.0833,
+   "empty_left_out": 0.0242,
+   "value_left_out": 0.066,
+   "value_added": 0.0175,
+   "empty_added": 0.0066,
+   "empty_as_zero_or_blank": 0.017,
+   "filled_empty": 0.0022,
+   "emptied_value": 0.0017,
+   "format_only": 0,
+   "markdown_escape": 0,
+   "wrong_value": 0.0458,
+   "wrong_shape": 0.0006
+  },
+  "fields": {
+   "not_json": 5372,
+   "empty_left_out": 1078,
+   "value_left_out": 2473,
+   "value_added": 530,
+   "empty_added": 252,
+   "empty_as_zero_or_blank": 551,
+   "filled_empty": 67,
+   "emptied_value": 45,
+   "format_only": 0,
+   "markdown_escape": 0,
+   "wrong_value": 420,
+   "wrong_shape": 2
+  },
+  "documents_affected": {
+   "not_json": 25,
+   "empty_left_out": 33,
+   "value_left_out": 59,
+   "value_added": 35,
+   "empty_added": 7,
+   "empty_as_zero_or_blank": 42,
+   "filled_empty": 17,
+   "emptied_value": 6,
+   "format_only": 0,
+   "markdown_escape": 0,
+   "wrong_value": 107,
+   "wrong_shape": 1
+  },
+  "by_document_kind": {
+   "CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 34,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   },
+   "TABLE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 2,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "DRIVER_LICENSE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 3,
+    "wrong_shape": 0
+   },
+   "PHOTO_CHART": {
+    "not_json": 30,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "BANK_CHECK": {
+    "not_json": 75,
+    "empty_left_out": 3,
+    "value_left_out": 50,
+    "value_added": 6,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 16,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 124,
+    "wrong_shape": 0
+   },
+   "MATH_VQA": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "SCANNED_FORM": {
+    "not_json": 12,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   },
+   "PHOTO_NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_RECEIPT": {
+    "not_json": 0,
+    "empty_left_out": 11,
+    "value_left_out": 1,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 12,
+    "filled_empty": 11,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 20,
+    "wrong_shape": 0
+   },
+   "PATIENT_INTAKE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 6,
+    "value_added": 7,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 17,
+    "filled_empty": 0,
+    "emptied_value": 1,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 7,
+    "wrong_shape": 2
+   },
+   "COMMERCIAL_LEASE_AGREEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SHIPPING_INVOICE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 29,
+    "value_added": 10,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 1,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 61,
+    "wrong_shape": 0
+   },
+   "PETITION_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "PAY_IN_SHEET": {
+    "not_json": 148,
+    "empty_left_out": 215,
+    "value_left_out": 18,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 212,
+    "filled_empty": 4,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 18,
+    "wrong_shape": 0
+   },
+   "ACCOUNT_STATEMENT": {
+    "not_json": 133,
+    "empty_left_out": 0,
+    "value_left_out": 162,
+    "value_added": 24,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 4,
+    "wrong_shape": 0
+   },
+   "SHIFT_SCHEDULE": {
+    "not_json": 4324,
+    "empty_left_out": 464,
+    "value_left_out": 399,
+    "value_added": 110,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 36,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "REAL_ESTATE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "GLOSSARY": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 209,
+    "value_added": 4,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 10,
+    "wrong_shape": 0
+   },
+   "DELIVERY_NOTE": {
+    "not_json": 90,
+    "empty_left_out": 4,
+    "value_left_out": 4,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 3,
+    "filled_empty": 1,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   },
+   "CREDIT_CARD_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 111,
+    "value_left_out": 1272,
+    "value_added": 9,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 273,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 18,
+    "wrong_shape": 0
+   },
+   "PROXY_VOTING": {
+    "not_json": 442,
+    "empty_left_out": 107,
+    "value_left_out": 275,
+    "value_added": 106,
+    "empty_added": 251,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 6,
+    "emptied_value": 44,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 117,
+    "wrong_shape": 0
+   },
+   "FORM_1040": {
+    "not_json": 46,
+    "empty_left_out": 1,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 1,
+    "empty_as_zero_or_blank": 18,
+    "filled_empty": 8,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 7,
+    "wrong_shape": 0
+   },
+   "PATENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 14,
+    "wrong_shape": 0
+   },
+   "EQUIPMENT_INSPECTION": {
+    "not_json": 0,
+    "empty_left_out": 152,
+    "value_left_out": 7,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 3,
+    "wrong_shape": 0
+   },
+   "NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 249,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 5,
+    "value_added": 5,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SCANNED_TABLE": {
+    "not_json": 72,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SLIDES": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "EARNINGS_REPORT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "LIST": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   }
+  },
+  "per_document": {
+   "1": {
+    "wrong_value": 1
+   },
+   "5": {
+    "wrong_value": 2
+   },
+   "7": {
+    "wrong_value": 3
+   },
+   "8": {
+    "not_json": 30
+   },
+   "17": {
+    "not_json": 15
+   },
+   "27": {},
+   "29": {},
+   "30": {},
+   "40": {
+    "wrong_value": 1
+   },
+   "41": {
+    "empty_left_out": 10,
+    "value_left_out": 2
+   },
+   "47": {},
+   "49": {},
+   "56": {
+    "empty_left_out": 11,
+    "value_left_out": 1,
+    "empty_as_zero_or_blank": 11,
+    "filled_empty": 11,
+    "wrong_value": 10
+   },
+   "59": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 6
+   },
+   "64": {
+    "value_left_out": 6,
+    "value_added": 6,
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "65": {},
+   "73": {
+    "filled_empty": 1,
+    "wrong_value": 1
+   },
+   "77": {},
+   "86": {},
+   "90": {},
+   "94": {
+    "empty_as_zero_or_blank": 23,
+    "wrong_value": 1
+   },
+   "96": {
+    "not_json": 57
+   },
+   "99": {
+    "empty_left_out": 212,
+    "value_left_out": 94,
+    "value_added": 24
+   },
+   "104": {},
+   "106": {
+    "value_left_out": 42
+   },
+   "107": {
+    "value_left_out": 2,
+    "value_added": 4,
+    "wrong_value": 12
+   },
+   "110": {},
+   "113": {},
+   "117": {
+    "empty_left_out": 52,
+    "value_left_out": 208
+   },
+   "127": {
+    "not_json": 110
+   },
+   "136": {},
+   "137": {
+    "empty_as_zero_or_blank": 2,
+    "emptied_value": 1
+   },
+   "145": {
+    "empty_as_zero_or_blank": 2,
+    "filled_empty": 1
+   },
+   "148": {},
+   "149": {},
+   "154": {},
+   "155": {
+    "wrong_value": 1
+   },
+   "159": {
+    "value_left_out": 48,
+    "value_added": 6,
+    "empty_as_zero_or_blank": 3,
+    "wrong_value": 16
+   },
+   "160": {
+    "not_json": 51
+   },
+   "162": {
+    "not_json": 651
+   },
+   "164": {
+    "wrong_value": 1
+   },
+   "165": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 2
+   },
+   "166": {},
+   "167": {
+    "value_left_out": 24,
+    "value_added": 2
+   },
+   "170": {
+    "empty_left_out": 1
+   },
+   "171": {},
+   "173": {
+    "not_json": 46
+   },
+   "176": {},
+   "179": {},
+   "180": {
+    "not_json": 37
+   },
+   "184": {
+    "empty_left_out": 9,
+    "value_left_out": 20,
+    "value_added": 4,
+    "empty_added": 24,
+    "emptied_value": 10,
+    "wrong_value": 6
+   },
+   "187": {
+    "wrong_value": 12
+   },
+   "191": {
+    "empty_left_out": 20,
+    "value_left_out": 5
+   },
+   "192": {
+    "empty_left_out": 1,
+    "value_left_out": 6,
+    "value_added": 3,
+    "empty_added": 4,
+    "filled_empty": 3,
+    "emptied_value": 7,
+    "wrong_value": 9
+   },
+   "193": {
+    "value_added": 1,
+    "empty_as_zero_or_blank": 2
+   },
+   "198": {
+    "empty_as_zero_or_blank": 46,
+    "wrong_value": 1
+   },
+   "204": {
+    "value_left_out": 24,
+    "value_added": 3,
+    "wrong_value": 1
+   },
+   "215": {},
+   "221": {},
+   "222": {
+    "value_left_out": 6
+   },
+   "229": {
+    "not_json": 258
+   },
+   "230": {},
+   "232": {},
+   "234": {
+    "value_left_out": 21,
+    "value_added": 2
+   },
+   "235": {
+    "not_json": 148
+   },
+   "239": {
+    "wrong_value": 23
+   },
+   "240": {
+    "empty_left_out": 1,
+    "value_left_out": 7,
+    "value_added": 24,
+    "empty_added": 83,
+    "emptied_value": 10,
+    "wrong_value": 13
+   },
+   "241": {
+    "not_json": 513
+   },
+   "244": {
+    "wrong_value": 1
+   },
+   "247": {},
+   "253": {},
+   "257": {},
+   "258": {
+    "not_json": 603
+   },
+   "259": {},
+   "260": {},
+   "261": {
+    "empty_left_out": 51,
+    "value_left_out": 93,
+    "value_added": 22,
+    "empty_added": 14
+   },
+   "262": {
+    "not_json": 496
+   },
+   "263": {
+    "empty_left_out": 18,
+    "empty_as_zero_or_blank": 6,
+    "wrong_value": 1
+   },
+   "268": {},
+   "269": {
+    "wrong_value": 22
+   },
+   "270": {
+    "empty_left_out": 21
+   },
+   "281": {},
+   "282": {},
+   "285": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 4
+   },
+   "286": {
+    "wrong_value": 1
+   },
+   "287": {},
+   "289": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "293": {},
+   "295": {},
+   "296": {
+    "empty_left_out": 21
+   },
+   "297": {
+    "value_left_out": 87,
+    "value_added": 29
+   },
+   "302": {
+    "value_added": 3,
+    "wrong_value": 1
+   },
+   "303": {},
+   "309": {},
+   "312": {},
+   "317": {},
+   "318": {},
+   "320": {
+    "wrong_value": 1
+   },
+   "326": {
+    "value_left_out": 1
+   },
+   "327": {
+    "value_left_out": 8,
+    "value_added": 8,
+    "wrong_value": 11
+   },
+   "334": {
+    "value_left_out": 15,
+    "wrong_value": 1
+   },
+   "335": {
+    "empty_as_zero_or_blank": 53,
+    "wrong_value": 1
+   },
+   "338": {},
+   "340": {
+    "value_left_out": 290
+   },
+   "343": {
+    "empty_as_zero_or_blank": 2,
+    "filled_empty": 1
+   },
+   "348": {},
+   "349": {
+    "empty_as_zero_or_blank": 53,
+    "wrong_value": 1
+   },
+   "355": {
+    "empty_as_zero_or_blank": 3,
+    "wrong_value": 15
+   },
+   "357": {},
+   "360": {},
+   "361": {
+    "value_left_out": 1,
+    "wrong_value": 3
+   },
+   "366": {
+    "value_left_out": 24,
+    "value_added": 3,
+    "wrong_value": 1
+   },
+   "370": {
+    "empty_as_zero_or_blank": 1
+   },
+   "378": {
+    "empty_left_out": 16,
+    "wrong_value": 2
+   },
+   "381": {
+    "empty_left_out": 24,
+    "value_left_out": 26,
+    "value_added": 9,
+    "empty_added": 41,
+    "wrong_value": 1
+   },
+   "383": {
+    "empty_as_zero_or_blank": 18,
+    "wrong_value": 1
+   },
+   "386": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_value": 1
+   },
+   "392": {
+    "value_left_out": 2,
+    "wrong_value": 1
+   },
+   "394": {
+    "not_json": 207
+   },
+   "398": {
+    "value_added": 3
+   },
+   "401": {},
+   "403": {
+    "empty_as_zero_or_blank": 3
+   },
+   "404": {
+    "empty_left_out": 3,
+    "value_left_out": 2,
+    "wrong_value": 20
+   },
+   "408": {
+    "wrong_value": 5
+   },
+   "409": {
+    "empty_as_zero_or_blank": 39,
+    "wrong_value": 1
+   },
+   "412": {},
+   "413": {},
+   "415": {
+    "not_json": 72
+   },
+   "420": {
+    "wrong_value": 2
+   },
+   "424": {
+    "empty_as_zero_or_blank": 54,
+    "wrong_value": 2
+   },
+   "427": {},
+   "428": {
+    "wrong_value": 3
+   },
+   "431": {},
+   "433": {},
+   "434": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_shape": 2
+   },
+   "435": {},
+   "437": {
+    "empty_left_out": 3
+   },
+   "445": {},
+   "448": {},
+   "451": {
+    "empty_left_out": 21,
+    "wrong_value": 3
+   },
+   "457": {
+    "empty_as_zero_or_blank": 2
+   },
+   "458": {
+    "empty_left_out": 22
+   },
+   "465": {
+    "wrong_value": 2
+   },
+   "471": {
+    "not_json": 98
+   },
+   "473": {},
+   "474": {},
+   "475": {},
+   "478": {
+    "not_json": 263
+   },
+   "486": {
+    "wrong_value": 4
+   },
+   "487": {
+    "value_left_out": 1,
+    "value_added": 2,
+    "wrong_value": 1
+   },
+   "489": {
+    "value_left_out": 1,
+    "wrong_value": 2
+   },
+   "494": {
+    "value_added": 204
+   },
+   "504": {
+    "value_left_out": 275
+   },
+   "508": {
+    "not_json": 60
+   },
+   "509": {
+    "value_left_out": 13,
+    "value_added": 2,
+    "wrong_value": 12
+   },
+   "511": {
+    "empty_left_out": 24,
+    "value_left_out": 1
+   },
+   "517": {
+    "not_json": 39
+   },
+   "523": {
+    "not_json": 292
+   },
+   "524": {
+    "empty_left_out": 149,
+    "value_left_out": 64,
+    "value_added": 20
+   },
+   "527": {},
+   "533": {},
+   "536": {},
+   "539": {
+    "empty_left_out": 39,
+    "filled_empty": 4,
+    "wrong_value": 1
+   },
+   "540": {
+    "empty_left_out": 75,
+    "wrong_value": 4
+   },
+   "542": {
+    "empty_left_out": 18,
+    "value_left_out": 15,
+    "wrong_value": 1
+   },
+   "543": {
+    "value_left_out": 35,
+    "wrong_value": 2
+   },
+   "553": {
+    "empty_as_zero_or_blank": 5,
+    "wrong_value": 18
+   },
+   "556": {},
+   "558": {
+    "wrong_value": 4
+   },
+   "565": {
+    "wrong_value": 1
+   },
+   "569": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "570": {
+    "value_added": 45
+   },
+   "576": {},
+   "587": {
+    "empty_as_zero_or_blank": 28,
+    "wrong_value": 1
+   },
+   "589": {},
+   "595": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "600": {
+    "empty_left_out": 21,
+    "value_left_out": 36,
+    "value_added": 15,
+    "empty_added": 85,
+    "filled_empty": 1,
+    "emptied_value": 12,
+    "wrong_value": 14
+   },
+   "603": {
+    "value_left_out": 4,
+    "value_added": 2,
+    "wrong_value": 1
+   },
+   "607": {},
+   "609": {
+    "value_left_out": 3,
+    "empty_as_zero_or_blank": 3
+   },
+   "612": {
+    "empty_left_out": 18,
+    "value_left_out": 1,
+    "wrong_value": 1
+   },
+   "613": {
+    "wrong_value": 1
+   },
+   "614": {
+    "value_left_out": 2,
+    "value_added": 2,
+    "wrong_value": 4
+   },
+   "615": {},
+   "616": {},
+   "618": {
+    "wrong_value": 4
+   },
+   "620": {
+    "empty_left_out": 20,
+    "value_left_out": 2,
+    "wrong_value": 1
+   },
+   "622": {
+    "wrong_value": 1
+   },
+   "623": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 5
+   },
+   "629": {
+    "value_left_out": 21
+   },
+   "630": {},
+   "636": {},
+   "638": {
+    "wrong_value": 2
+   },
+   "643": {},
+   "644": {},
+   "651": {
+    "value_left_out": 3
+   },
+   "654": {},
+   "658": {},
+   "661": {
+    "not_json": 12
+   },
+   "662": {},
+   "664": {
+    "wrong_value": 4
+   },
+   "679": {
+    "wrong_value": 2
+   },
+   "680": {},
+   "681": {},
+   "685": {},
+   "690": {
+    "not_json": 462
+   },
+   "708": {
+    "value_left_out": 4,
+    "wrong_value": 13
+   },
+   "710": {
+    "empty_as_zero_or_blank": 58
+   },
+   "712": {
+    "empty_as_zero_or_blank": 2,
+    "filled_empty": 1
+   },
+   "713": {},
+   "716": {},
+   "718": {},
+   "719": {},
+   "725": {
+    "empty_left_out": 59,
+    "value_left_out": 236
+   },
+   "728": {
+    "wrong_value": 1
+   },
+   "730": {
+    "wrong_value": 2
+   },
+   "735": {
+    "empty_left_out": 23,
+    "value_left_out": 1
+   },
+   "740": {
+    "value_left_out": 42,
+    "wrong_value": 1
+   },
+   "743": {},
+   "746": {
+    "wrong_value": 1
+   },
+   "756": {},
+   "759": {
+    "value_left_out": 49,
+    "value_added": 10
+   },
+   "760": {
+    "wrong_value": 1
+   },
+   "762": {
+    "empty_as_zero_or_blank": 2,
+    "filled_empty": 1,
+    "wrong_value": 1
+   },
+   "764": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "767": {
+    "filled_empty": 1,
+    "wrong_value": 1
+   },
+   "771": {},
+   "773": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "774": {
+    "value_left_out": 33,
+    "wrong_value": 3
+   },
+   "776": {},
+   "781": {},
+   "784": {},
+   "791": {},
+   "796": {
+    "value_left_out": 24
+   },
+   "804": {},
+   "806": {
+    "value_left_out": 53,
+    "value_added": 2,
+    "wrong_value": 1
+   },
+   "809": {
+    "value_added": 1,
+    "empty_as_zero_or_blank": 55,
+    "wrong_value": 2
+   },
+   "812": {},
+   "813": {
+    "filled_empty": 1,
+    "wrong_value": 1
+   },
+   "818": {},
+   "825": {},
+   "829": {
+    "wrong_value": 1
+   },
+   "830": {
+    "filled_empty": 2,
+    "emptied_value": 5,
+    "wrong_value": 9
+   },
+   "835": {
+    "filled_empty": 1,
+    "wrong_value": 1
+   },
+   "839": {},
+   "842": {},
+   "860": {
+    "value_left_out": 2,
+    "wrong_value": 5
+   },
+   "861": {},
+   "876": {},
+   "882": {},
+   "888": {
+    "value_added": 7
+   },
+   "891": {
+    "not_json": 234
+   },
+   "892": {
+    "value_left_out": 34
+   },
+   "894": {
+    "value_left_out": 255
+   },
+   "895": {},
+   "900": {
+    "value_left_out": 1,
+    "wrong_value": 1
+   },
+   "901": {
+    "value_added": 1
+   },
+   "903": {
+    "not_json": 39
+   },
+   "904": {
+    "wrong_value": 8
+   },
+   "906": {
+    "empty_left_out": 11,
+    "wrong_value": 1
+   },
+   "907": {},
+   "909": {},
+   "911": {
+    "value_left_out": 5,
+    "value_added": 5
+   },
+   "913": {
+    "empty_left_out": 52,
+    "value_left_out": 64,
+    "value_added": 20,
+    "filled_empty": 17
+   },
+   "915": {
+    "empty_as_zero_or_blank": 2
+   },
+   "916": {},
+   "917": {},
+   "919": {},
+   "922": {
+    "wrong_value": 1
+   },
+   "926": {},
+   "927": {},
+   "928": {},
+   "929": {
+    "wrong_value": 1
+   },
+   "930": {},
+   "931": {},
+   "933": {
+    "wrong_value": 1
+   },
+   "934": {},
+   "935": {
+    "not_json": 579
+   },
+   "942": {},
+   "943": {
+    "wrong_value": 1
+   },
+   "944": {},
+   "947": {},
+   "950": {},
+   "951": {
+    "empty_as_zero_or_blank": 52,
+    "wrong_value": 1
+   },
+   "953": {},
+   "954": {
+    "wrong_value": 3
+   },
+   "957": {
+    "wrong_value": 1
+   },
+   "970": {
+    "empty_left_out": 51,
+    "value_left_out": 59,
+    "value_added": 22,
+    "filled_empty": 19
+   },
+   "971": {
+    "value_left_out": 69,
+    "value_added": 14
+   },
+   "972": {},
+   "973": {
+    "empty_as_zero_or_blank": 3,
+    "filled_empty": 1,
+    "wrong_value": 1
+   },
+   "974": {
+    "empty_as_zero_or_blank": 3,
+    "filled_empty": 1
+   },
+   "975": {},
+   "979": {
+    "wrong_value": 18
+   },
+   "982": {
+    "empty_left_out": 1,
+    "empty_added": 1
+   },
+   "986": {},
+   "987": {},
+   "993": {},
+   "994": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 10
+   },
+   "997": {
+    "wrong_value": 1
+   }
+  }
+ },
+ "nuextract3-4b": {
+  "documents": 300,
+  "points_lost": {
+   "not_json": 0,
+   "empty_left_out": 0.0143,
+   "value_left_out": 0.0391,
+   "value_added": 0.0435,
+   "empty_added": 0.0113,
+   "empty_as_zero_or_blank": 0.0035,
+   "filled_empty": 0.0032,
+   "emptied_value": 0.0122,
+   "format_only": 0.0004,
+   "markdown_escape": 0.0001,
+   "wrong_value": 0.103,
+   "wrong_shape": 0
+  },
+  "fields": {
+   "not_json": 0,
+   "empty_left_out": 1566,
+   "value_left_out": 2140,
+   "value_added": 1608,
+   "empty_added": 644,
+   "empty_as_zero_or_blank": 38,
+   "filled_empty": 201,
+   "emptied_value": 130,
+   "format_only": 9,
+   "markdown_escape": 1,
+   "wrong_value": 1238,
+   "wrong_shape": 0
+  },
+  "documents_affected": {
+   "not_json": 0,
+   "empty_left_out": 21,
+   "value_left_out": 52,
+   "value_added": 51,
+   "empty_added": 25,
+   "empty_as_zero_or_blank": 21,
+   "filled_empty": 22,
+   "emptied_value": 32,
+   "format_only": 7,
+   "markdown_escape": 1,
+   "wrong_value": 140,
+   "wrong_shape": 0
+  },
+  "by_document_kind": {
+   "CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 82,
+    "wrong_shape": 0
+   },
+   "TABLE": {
+    "not_json": 0,
+    "empty_left_out": 10,
+    "value_left_out": 2,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "DRIVER_LICENSE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 1,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 2,
+    "wrong_shape": 0
+   },
+   "PHOTO_CHART": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "BANK_CHECK": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 4,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 137,
+    "wrong_shape": 0
+   },
+   "MATH_VQA": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 7,
+    "wrong_shape": 0
+   },
+   "SCANNED_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "PHOTO_RECEIPT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 9,
+    "empty_added": 5,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 11,
+    "emptied_value": 0,
+    "format_only": 1,
+    "markdown_escape": 0,
+    "wrong_value": 14,
+    "wrong_shape": 0
+   },
+   "PATIENT_INTAKE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 14,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 2,
+    "markdown_escape": 0,
+    "wrong_value": 13,
+    "wrong_shape": 0
+   },
+   "COMMERCIAL_LEASE_AGREEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SHIPPING_INVOICE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 4,
+    "value_added": 3,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 22,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 47,
+    "wrong_shape": 0
+   },
+   "PETITION_FORM": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 3,
+    "wrong_shape": 0
+   },
+   "PAY_IN_SHEET": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 2,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 11,
+    "wrong_shape": 0
+   },
+   "ACCOUNT_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 135,
+    "value_added": 6,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 6,
+    "wrong_shape": 0
+   },
+   "SHIFT_SCHEDULE": {
+    "not_json": 0,
+    "empty_left_out": 1459,
+    "value_left_out": 1502,
+    "value_added": 317,
+    "empty_added": 72,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 149,
+    "emptied_value": 14,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 40,
+    "wrong_shape": 0
+   },
+   "REAL_ESTATE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 324,
+    "empty_added": 18,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 13,
+    "wrong_shape": 0
+   },
+   "GLOSSARY": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 34,
+    "value_added": 25,
+    "empty_added": 2,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 1,
+    "wrong_shape": 0
+   },
+   "DELIVERY_NOTE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 17,
+    "wrong_shape": 0
+   },
+   "CREDIT_CARD_STATEMENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 48,
+    "value_added": 8,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 3,
+    "emptied_value": 3,
+    "format_only": 3,
+    "markdown_escape": 0,
+    "wrong_value": 294,
+    "wrong_shape": 0
+   },
+   "PROXY_VOTING": {
+    "not_json": 0,
+    "empty_left_out": 97,
+    "value_left_out": 407,
+    "value_added": 506,
+    "empty_added": 543,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 34,
+    "emptied_value": 66,
+    "format_only": 3,
+    "markdown_escape": 1,
+    "wrong_value": 324,
+    "wrong_shape": 0
+   },
+   "FORM_1040": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 1,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 24,
+    "filled_empty": 2,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 52,
+    "wrong_shape": 0
+   },
+   "PATENT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 6,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 34,
+    "wrong_shape": 0
+   },
+   "EQUIPMENT_INSPECTION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 2,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 108,
+    "wrong_shape": 0
+   },
+   "NUTRITION": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 405,
+    "empty_added": 4,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 6,
+    "wrong_shape": 0
+   },
+   "PHOTO_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 5,
+    "value_added": 5,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SCANNED_TABLE": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 14,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   },
+   "SLIDES": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 4,
+    "wrong_shape": 0
+   },
+   "EARNINGS_REPORT": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 23,
+    "wrong_shape": 0
+   },
+   "LIST": {
+    "not_json": 0,
+    "empty_left_out": 0,
+    "value_left_out": 0,
+    "value_added": 0,
+    "empty_added": 0,
+    "empty_as_zero_or_blank": 0,
+    "filled_empty": 0,
+    "emptied_value": 0,
+    "format_only": 0,
+    "markdown_escape": 0,
+    "wrong_value": 0,
+    "wrong_shape": 0
+   }
+  },
+  "per_document": {
+   "1": {},
+   "5": {},
+   "7": {
+    "emptied_value": 1,
+    "wrong_value": 2
+   },
+   "8": {},
+   "17": {
+    "wrong_value": 3
+   },
+   "27": {
+    "wrong_value": 10
+   },
+   "29": {},
+   "30": {
+    "wrong_value": 1
+   },
+   "40": {},
+   "41": {
+    "empty_left_out": 10,
+    "value_left_out": 2
+   },
+   "47": {},
+   "49": {},
+   "56": {
+    "value_added": 9,
+    "empty_added": 5,
+    "filled_empty": 11,
+    "format_only": 1,
+    "wrong_value": 8
+   },
+   "59": {
+    "wrong_value": 5
+   },
+   "64": {
+    "empty_as_zero_or_blank": 1,
+    "format_only": 1,
+    "wrong_value": 4
+   },
+   "65": {},
+   "73": {
+    "emptied_value": 5
+   },
+   "77": {},
+   "86": {},
+   "90": {},
+   "94": {
+    "wrong_value": 7
+   },
+   "96": {},
+   "99": {
+    "empty_left_out": 158,
+    "value_left_out": 103,
+    "value_added": 26,
+    "empty_added": 13,
+    "emptied_value": 1,
+    "wrong_value": 1
+   },
+   "104": {},
+   "106": {
+    "value_left_out": 5,
+    "value_added": 3,
+    "wrong_value": 1
+   },
+   "107": {
+    "emptied_value": 4,
+    "wrong_value": 4
+   },
+   "110": {
+    "value_added": 72
+   },
+   "113": {},
+   "117": {},
+   "127": {
+    "value_left_out": 49,
+    "value_added": 139,
+    "empty_added": 110,
+    "emptied_value": 1,
+    "format_only": 2,
+    "wrong_value": 29
+   },
+   "136": {},
+   "137": {
+    "wrong_value": 1
+   },
+   "145": {
+    "empty_as_zero_or_blank": 2,
+    "filled_empty": 1,
+    "wrong_value": 5
+   },
+   "148": {},
+   "149": {},
+   "154": {},
+   "155": {
+    "emptied_value": 1,
+    "wrong_value": 3
+   },
+   "159": {
+    "emptied_value": 1,
+    "wrong_value": 26
+   },
+   "160": {
+    "wrong_value": 3
+   },
+   "162": {
+    "empty_left_out": 224,
+    "value_left_out": 175,
+    "value_added": 16,
+    "empty_added": 8
+   },
+   "164": {},
+   "165": {
+    "wrong_value": 1
+   },
+   "166": {},
+   "167": {
+    "value_left_out": 6,
+    "wrong_value": 1
+   },
+   "170": {},
+   "171": {},
+   "173": {
+    "value_left_out": 1,
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 2
+   },
+   "176": {},
+   "179": {},
+   "180": {
+    "value_left_out": 12
+   },
+   "184": {
+    "value_added": 24,
+    "empty_added": 66,
+    "filled_empty": 2,
+    "emptied_value": 4,
+    "wrong_value": 15
+   },
+   "187": {
+    "value_left_out": 7,
+    "value_added": 7,
+    "emptied_value": 4,
+    "wrong_value": 12
+   },
+   "191": {
+    "wrong_value": 16
+   },
+   "192": {
+    "empty_left_out": 9,
+    "value_left_out": 26,
+    "value_added": 21,
+    "empty_added": 14,
+    "filled_empty": 1,
+    "wrong_value": 5
+   },
+   "193": {
+    "wrong_value": 1
+   },
+   "198": {},
+   "204": {
+    "value_left_out": 21,
+    "wrong_value": 1
+   },
+   "215": {},
+   "221": {
+    "wrong_value": 20
+   },
+   "222": {
+    "value_left_out": 3
+   },
+   "229": {
+    "empty_left_out": 53,
+    "value_left_out": 57,
+    "value_added": 14,
+    "filled_empty": 31
+   },
+   "230": {
+    "wrong_value": 1
+   },
+   "232": {
+    "wrong_value": 6
+   },
+   "234": {
+    "value_left_out": 9
+   },
+   "235": {
+    "filled_empty": 2
+   },
+   "239": {
+    "value_left_out": 56,
+    "value_added": 115,
+    "empty_added": 31,
+    "wrong_value": 47
+   },
+   "240": {
+    "empty_left_out": 19,
+    "value_left_out": 44,
+    "value_added": 71,
+    "empty_added": 192,
+    "filled_empty": 1,
+    "emptied_value": 6,
+    "wrong_value": 11
+   },
+   "241": {
+    "empty_left_out": 128,
+    "value_left_out": 143,
+    "value_added": 42,
+    "filled_empty": 31
+   },
+   "244": {
+    "wrong_value": 1
+   },
+   "247": {},
+   "253": {},
+   "257": {},
+   "258": {
+    "empty_left_out": 186,
+    "value_left_out": 111,
+    "value_added": 28,
+    "empty_added": 14,
+    "filled_empty": 1,
+    "wrong_value": 1
+   },
+   "259": {},
+   "260": {},
+   "261": {
+    "value_added": 5,
+    "empty_added": 31,
+    "filled_empty": 3,
+    "emptied_value": 9,
+    "wrong_value": 25
+   },
+   "262": {
+    "empty_left_out": 112,
+    "value_left_out": 130,
+    "value_added": 34,
+    "filled_empty": 32,
+    "wrong_value": 1
+   },
+   "263": {},
+   "268": {},
+   "269": {
+    "value_left_out": 21,
+    "value_added": 21,
+    "wrong_value": 38
+   },
+   "270": {},
+   "281": {},
+   "282": {
+    "wrong_value": 7
+   },
+   "285": {
+    "wrong_value": 5
+   },
+   "286": {
+    "wrong_value": 1
+   },
+   "287": {
+    "emptied_value": 1,
+    "wrong_value": 1
+   },
+   "289": {
+    "wrong_value": 4
+   },
+   "293": {},
+   "295": {
+    "value_added": 24
+   },
+   "296": {
+    "wrong_value": 1
+   },
+   "297": {
+    "wrong_value": 24
+   },
+   "302": {
+    "value_left_out": 18,
+    "wrong_value": 1
+   },
+   "303": {},
+   "309": {},
+   "312": {
+    "value_left_out": 1,
+    "value_added": 2
+   },
+   "317": {
+    "wrong_value": 2
+   },
+   "318": {
+    "value_added": 30
+   },
+   "320": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "326": {
+    "wrong_value": 3
+   },
+   "327": {
+    "value_left_out": 8,
+    "value_added": 8,
+    "wrong_value": 11
+   },
+   "334": {
+    "wrong_value": 1
+   },
+   "335": {},
+   "338": {},
+   "340": {},
+   "343": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_value": 3
+   },
+   "348": {
+    "wrong_value": 2
+   },
+   "349": {
+    "wrong_value": 53
+   },
+   "355": {
+    "wrong_value": 21
+   },
+   "357": {
+    "value_added": 12,
+    "empty_added": 6
+   },
+   "360": {},
+   "361": {
+    "emptied_value": 3,
+    "wrong_value": 2
+   },
+   "366": {
+    "value_left_out": 9,
+    "wrong_value": 1
+   },
+   "370": {},
+   "378": {},
+   "381": {
+    "empty_left_out": 9,
+    "value_left_out": 12,
+    "value_added": 11,
+    "empty_added": 10,
+    "filled_empty": 5,
+    "emptied_value": 2,
+    "format_only": 1,
+    "markdown_escape": 1,
+    "wrong_value": 9
+   },
+   "383": {},
+   "386": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "392": {},
+   "394": {
+    "empty_left_out": 51,
+    "value_left_out": 55,
+    "value_added": 8,
+    "filled_empty": 19
+   },
+   "398": {},
+   "401": {},
+   "403": {
+    "format_only": 1
+   },
+   "404": {
+    "emptied_value": 1,
+    "wrong_value": 11
+   },
+   "408": {
+    "wrong_value": 3
+   },
+   "409": {},
+   "412": {},
+   "413": {},
+   "415": {
+    "emptied_value": 14
+   },
+   "420": {
+    "wrong_value": 3
+   },
+   "424": {
+    "wrong_value": 1
+   },
+   "427": {
+    "value_left_out": 1,
+    "value_added": 2
+   },
+   "428": {
+    "wrong_value": 3
+   },
+   "431": {},
+   "433": {},
+   "434": {
+    "empty_as_zero_or_blank": 1
+   },
+   "435": {},
+   "437": {
+    "wrong_value": 2
+   },
+   "445": {
+    "wrong_value": 1
+   },
+   "448": {
+    "value_added": 36
+   },
+   "451": {},
+   "457": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_value": 4
+   },
+   "458": {
+    "wrong_value": 19
+   },
+   "465": {
+    "wrong_value": 6
+   },
+   "471": {
+    "value_left_out": 56,
+    "wrong_value": 17
+   },
+   "473": {
+    "wrong_value": 2
+   },
+   "474": {},
+   "475": {
+    "wrong_value": 9
+   },
+   "478": {
+    "value_left_out": 113,
+    "value_added": 11,
+    "wrong_value": 36
+   },
+   "486": {},
+   "487": {
+    "wrong_value": 1
+   },
+   "489": {
+    "emptied_value": 5
+   },
+   "494": {
+    "value_added": 204
+   },
+   "504": {
+    "format_only": 2,
+    "wrong_value": 55
+   },
+   "508": {
+    "wrong_value": 12
+   },
+   "509": {
+    "emptied_value": 2,
+    "wrong_value": 5
+   },
+   "511": {},
+   "517": {},
+   "523": {
+    "empty_left_out": 66,
+    "value_left_out": 72,
+    "value_added": 28,
+    "filled_empty": 16
+   },
+   "524": {
+    "empty_left_out": 101,
+    "value_left_out": 73,
+    "value_added": 22,
+    "empty_added": 11
+   },
+   "527": {},
+   "533": {},
+   "536": {},
+   "539": {},
+   "540": {},
+   "542": {},
+   "543": {},
+   "553": {
+    "wrong_value": 16
+   },
+   "556": {},
+   "558": {
+    "wrong_value": 5
+   },
+   "565": {
+    "wrong_value": 2
+   },
+   "569": {
+    "empty_as_zero_or_blank": 3,
+    "wrong_value": 1
+   },
+   "570": {
+    "value_added": 201,
+    "empty_added": 4
+   },
+   "576": {},
+   "587": {
+    "wrong_value": 4
+   },
+   "589": {},
+   "595": {
+    "empty_as_zero_or_blank": 3,
+    "wrong_value": 1
+   },
+   "600": {
+    "empty_left_out": 23,
+    "value_left_out": 33,
+    "value_added": 19,
+    "empty_added": 22,
+    "filled_empty": 6,
+    "emptied_value": 13,
+    "wrong_value": 15
+   },
+   "603": {
+    "value_left_out": 6,
+    "value_added": 3,
+    "empty_added": 1
+   },
+   "607": {},
+   "609": {
+    "wrong_value": 3
+   },
+   "612": {},
+   "613": {},
+   "614": {
+    "wrong_value": 1
+   },
+   "615": {
+    "wrong_value": 23
+   },
+   "616": {},
+   "618": {
+    "wrong_value": 4
+   },
+   "620": {},
+   "622": {
+    "value_added": 3,
+    "emptied_value": 1,
+    "wrong_value": 15
+   },
+   "623": {
+    "wrong_value": 5
+   },
+   "629": {
+    "value_left_out": 9,
+    "wrong_value": 1
+   },
+   "630": {
+    "wrong_value": 2
+   },
+   "636": {},
+   "638": {
+    "wrong_value": 4
+   },
+   "643": {
+    "wrong_value": 2
+   },
+   "644": {
+    "value_added": 16,
+    "empty_added": 8
+   },
+   "651": {
+    "value_left_out": 21
+   },
+   "654": {},
+   "658": {
+    "wrong_value": 7
+   },
+   "661": {},
+   "662": {
+    "value_added": 8,
+    "empty_added": 4,
+    "wrong_value": 13
+   },
+   "664": {
+    "wrong_value": 1
+   },
+   "679": {
+    "wrong_value": 23
+   },
+   "680": {},
+   "681": {},
+   "685": {
+    "value_left_out": 2,
+    "wrong_value": 16
+   },
+   "690": {
+    "empty_left_out": 98,
+    "value_left_out": 121,
+    "value_added": 30,
+    "empty_added": 16
+   },
+   "708": {
+    "value_left_out": 4,
+    "wrong_value": 13
+   },
+   "710": {
+    "format_only": 1,
+    "wrong_value": 59
+   },
+   "712": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_value": 5
+   },
+   "713": {},
+   "716": {},
+   "718": {},
+   "719": {
+    "wrong_value": 2
+   },
+   "725": {
+    "wrong_value": 2
+   },
+   "728": {
+    "wrong_value": 3
+   },
+   "730": {
+    "wrong_value": 3
+   },
+   "735": {},
+   "740": {},
+   "743": {},
+   "746": {
+    "emptied_value": 1,
+    "wrong_value": 2
+   },
+   "756": {},
+   "759": {
+    "value_left_out": 58,
+    "value_added": 5
+   },
+   "760": {
+    "emptied_value": 1,
+    "wrong_value": 2
+   },
+   "762": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_value": 3
+   },
+   "764": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "767": {
+    "wrong_value": 2
+   },
+   "771": {},
+   "773": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 1
+   },
+   "774": {
+    "value_left_out": 4,
+    "value_added": 5
+   },
+   "776": {},
+   "781": {
+    "wrong_value": 17
+   },
+   "784": {
+    "wrong_value": 2
+   },
+   "791": {},
+   "796": {
+    "value_left_out": 21
+   },
+   "804": {
+    "wrong_value": 15
+   },
+   "806": {
+    "value_left_out": 17,
+    "value_added": 10,
+    "empty_added": 1
+   },
+   "809": {
+    "filled_empty": 3,
+    "emptied_value": 3,
+    "wrong_value": 58
+   },
+   "812": {
+    "wrong_value": 8
+   },
+   "813": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 3
+   },
+   "818": {},
+   "825": {},
+   "829": {
+    "wrong_value": 2
+   },
+   "830": {
+    "empty_left_out": 4,
+    "value_left_out": 10,
+    "value_added": 6,
+    "empty_added": 8,
+    "filled_empty": 4,
+    "emptied_value": 8,
+    "wrong_value": 17
+   },
+   "835": {
+    "empty_as_zero_or_blank": 1,
+    "wrong_value": 2
+   },
+   "839": {
+    "wrong_value": 5
+   },
+   "842": {
+    "emptied_value": 1,
+    "wrong_value": 1
+   },
+   "860": {
+    "emptied_value": 1
+   },
+   "861": {},
+   "876": {},
+   "882": {},
+   "888": {
+    "value_left_out": 6
+   },
+   "891": {
+    "empty_left_out": 28,
+    "value_left_out": 77,
+    "value_added": 57,
+    "empty_added": 48,
+    "filled_empty": 9,
+    "emptied_value": 18,
+    "wrong_value": 42
+   },
+   "892": {},
+   "894": {},
+   "895": {},
+   "900": {
+    "emptied_value": 1,
+    "wrong_value": 5
+   },
+   "901": {},
+   "903": {
+    "value_added": 6
+   },
+   "904": {
+    "empty_left_out": 5,
+    "value_left_out": 16,
+    "value_added": 10,
+    "empty_added": 11,
+    "filled_empty": 3,
+    "emptied_value": 1,
+    "wrong_value": 18
+   },
+   "906": {},
+   "907": {},
+   "909": {
+    "value_left_out": 40
+   },
+   "911": {
+    "value_left_out": 5,
+    "value_added": 5
+   },
+   "913": {
+    "empty_left_out": 51,
+    "value_left_out": 63,
+    "value_added": 20,
+    "filled_empty": 18
+   },
+   "915": {
+    "empty_as_zero_or_blank": 3,
+    "wrong_value": 3
+   },
+   "916": {},
+   "917": {},
+   "919": {},
+   "922": {
+    "wrong_value": 3
+   },
+   "926": {},
+   "927": {
+    "wrong_value": 2
+   },
+   "928": {
+    "value_added": 54
+   },
+   "929": {
+    "wrong_value": 55
+   },
+   "930": {
+    "value_added": 72
+   },
+   "931": {},
+   "933": {},
+   "934": {
+    "wrong_value": 12
+   },
+   "935": {
+    "empty_left_out": 197,
+    "value_left_out": 112,
+    "value_added": 14,
+    "empty_added": 7
+   },
+   "942": {},
+   "943": {
+    "wrong_value": 6
+   },
+   "944": {
+    "wrong_value": 3
+   },
+   "947": {},
+   "950": {},
+   "951": {},
+   "953": {},
+   "954": {
+    "emptied_value": 1,
+    "wrong_value": 2
+   },
+   "957": {
+    "wrong_value": 4
+   },
+   "970": {
+    "empty_left_out": 34,
+    "value_left_out": 44,
+    "value_added": 7,
+    "empty_added": 3,
+    "filled_empty": 1,
+    "emptied_value": 13,
+    "wrong_value": 1
+   },
+   "971": {
+    "value_left_out": 72,
+    "value_added": 12
+   },
+   "972": {},
+   "973": {
+    "empty_as_zero_or_blank": 3,
+    "wrong_value": 2
+   },
+   "974": {
+    "empty_as_zero_or_blank": 3,
+    "filled_empty": 1,
+    "wrong_value": 5
+   },
+   "975": {},
+   "979": {
+    "emptied_value": 2,
+    "wrong_value": 12
+   },
+   "982": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_value": 2
+   },
+   "986": {},
+   "987": {},
+   "993": {
+    "empty_as_zero_or_blank": 2,
+    "wrong_value": 1
+   },
+   "994": {
+    "wrong_value": 6
+   },
+   "997": {}
+  }
+ }
+}

@@ -13,3 +13,8 @@ bun scripts/scorer_audit.ts
 echo
 echo "Paired bootstrap:"
 python3 scripts/bootstrap.py
+echo
+echo "Error analysis:"
+bun scripts/error_analysis.ts --check
+echo
+python3 scripts/error_reading.py
