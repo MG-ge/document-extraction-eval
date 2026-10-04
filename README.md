@@ -1,4 +1,4 @@
-# Document extraction: eight models, a scorer that rewards leaving things out, and one sentence worth five points
+# Document extraction: seven models, a scorer that rewards leaving things out, and one sentence worth five points
 
 [![reproduce](https://github.com/MG-ge/document-extraction-eval/actions/workflows/reproduce.yml/badge.svg)](https://github.com/MG-ge/document-extraction-eval/actions/workflows/reproduce.yml)
 
@@ -33,8 +33,8 @@ Everything below can be re-checked from this repository in a few minutes, with n
   training IDs, and a SHA-256 hash of each test document's image, text, schema and answer, are in
   [`evals/eval_split_v1.json`](evals/eval_split_v1.json) (fingerprint `2ed8fd9b1e0348df`).
 - **Runs:** one run per model on 18 Sep 2026, up to 16,384 output tokens. Gemini ran at
-  temperature 0; the OpenAI requests set no temperature. Neither set a reasoning level, so each
-  ran at its API's default, medium; the last pass (below) sets medium explicitly. The two laptop
+  temperature 0; the OpenAI requests set no temperature, although their run files say 0. Neither
+  set a reasoning level, so each ran at its API's default, medium; the last pass (below) sets medium explicitly. The two laptop
   models ran greedy (temperature 0) with thinking off. Every model except NuExtract got the same
   prompt:
 
@@ -207,8 +207,8 @@ Same 300 documents, same scorer, reasoning level medium throughout
 | Gemini 3.8 Flash | 0.9441 | 0.9886 | +0.0445 [+0.0310, +0.0584] | 0.9408 | 0.9853 |
 | `gpt-6-luna` | 0.9364 | 0.9580 | +0.0217 [+0.0094, +0.0336] | 0.9330 | 0.9547 |
 
-**One sentence is worth about five points**, as the error analysis predicted. With it,
-`gpt-6.1-sol` gets 99.1% of the fields right on the official score.
+**For Sol and Gemini, one sentence is worth about five points**, as the error analysis
+predicted; `gpt-6-luna` gains about two. With it, `gpt-6.1-sol` scores 0.991 on the official score.
 
 **The same fix by code.** [`scripts/null_fill.py`](scripts/null_fill.py) takes each stored answer
 and adds, as `null`, every field its schema defines that the answer leaves out; a second variant
@@ -234,8 +234,8 @@ hash-checked against the split) and the model's answer, never the correct answer
   new run.
 - **The 18 Sep order holds.** Filled, the three API models score 0.987, 0.985 and 0.983.
 - **The small models gain little.** Qwen moves from 0.818 to 0.825 (its 25 answers that are not
-  valid JSON cannot be filled); NuExtract does not move, since its template already writes every
-  field.
+  valid JSON cannot be filled); NuExtract does not move, since its template already writes all but
+  one of the fields the schemas define.
 
 **How these runs were made.** They did not all go through the paid API, and each answer records
 its route (`answers_by_route` in a run's JSON where a run mixes them):
@@ -261,7 +261,7 @@ re-run minus stored run):
 
 Every interval contains zero, so the route makes no measurable difference here. Gemini's
 Antigravity re-run is also its v1 run above. The API re-run measures the run-to-run noise: about
-one document in twelve changes score between two identical runs.
+one document in twelve changes score between two API runs of the same model and prompt.
 
 There is no euro column for the last pass, since it mixed API billing with plan allowances, and
 seconds per document are not comparable either: the command-line clients add start-up time.
@@ -282,7 +282,7 @@ seconds per document are not comparable either: the command-line clients add sta
 - **One run per model.** A second API run of `gpt-5.6-luna` changed the score of 24 of the 300
   documents and the mean by +0.0013, well inside its interval (last pass, calibration table).
   Gaps under about one point are not a ranking.
-- **A ninth model was not scored.** `gpt-6-astra` stopped at 236 of 300 documents when the API
+- **An eighth model was not scored.** `gpt-6-astra` stopped at 236 of 300 documents when the API
   credit ran out, and its ChatGPT Plus allowance was too small to finish it.
 - **The last pass is one prompt change on three models.** v2 was not run on the 18 Sep models or
   the laptop models; the code fill was.
